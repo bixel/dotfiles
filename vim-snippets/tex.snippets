@@ -1,0 +1,67 @@
+## common
+# Section
+snippet sec
+	\section{${1}}
+# Figure
+snippet fig
+	\begin{figure}
+		${0}
+	\end{figure}
+# Environment
+snippet be
+	\begin{${1:env}}
+		${0}
+	\end{$1}
+# Equation
+snippet eq
+	\begin{equation}
+	\label{eq:${2}}
+			${0}
+	\end{equation}
+# Equation
+snippet eq*
+	\begin{equation*}
+		${0}
+	\end{equation*}
+# Equation array
+snippet eqnarray
+	\begin{eqnarray}
+		${0}
+	\end{eqnarray}
+# Fraction
+snippet frac
+	\frac{${1}}{${2}}${0}
+# ()
+snippet ()
+	\left( ${0} \right)
+# []
+snippet []
+	\left[ ${0} \right]
+# Label
+snippet lab
+	\label{${1}}
+# Itemize
+snippet itemize
+	\begin{itemize}
+		\item ${0}
+	\end{itemize}
+# Endless new item
+snippet item
+	\item ${1}
+	item
+# electronvolt per c squared
+snippet evc
+	\electronvolt \per \clight \squared
+# siunitx maaan
+snippet si
+	\SI{${1}}{${2}}
+snippet ss
+	\si{${1}}
+snippet n
+	\num{${1}}
+## beamer
+# frame
+snippet frame
+	\begin{frame}{${1:frametitle}}
+		${0}
+	\end{frame}

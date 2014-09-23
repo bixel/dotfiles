@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=${1:0.5}\linewidth]{img/${2:foo}.${3:jpeg}}
+    \caption{
+        ${4:Schönes Bildchen}
+    }
+    \label{fig:${2:foo}}
+\end{figure}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fig</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

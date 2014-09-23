@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+\begin{table}
+    \centering
+    \caption{
+        ${1}
+    }
+    \label{tab:${2}}
+    \begin{tabular}{${3:ccc}}
+        \toprule
+        ${4:HEAD} \\\\
+        \midrule
+        ${5:BODY} \\\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>tab</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
