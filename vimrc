@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 "set right encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -5,9 +7,15 @@ set fileencoding=utf-8
 "use jk for Escape
 inoremap jk <ESC>
 
-"remap mapleader / to , this vim stuff ist really not thaaaat comfortable if
+map j gj
+map k gk
+
+"lajdflasldflsajflasdlfjslajfsjremap mapleader / to , this vim stuff ist really not thaaaat comfortable if
 "you are not used to it O.o
 let mapleader = ","
+
+"execute current file
+nnoremap <leader>e :!%:p<Enter>
 
 "open Nerdtree with CTRL+n
 map <C-n> :NERDTreeToggle<CR>
@@ -54,14 +62,19 @@ Bundle 'gmarik/vundle'
 " Own bundles
 " Only use YCM if macvim is available. YCM is incompatible with vim version <
 " 7.3...
-if has("gui_macvim")
-    Bundle 'Valloric/YouCompleteMe'
-endif
-Bundle 'klen/python-mode'
+"if has("gui_macvim")
+"    Bundle 'Valloric/YouCompleteMe'
+"endif
+Bundle 'davidhalter/jedi-vim'
+"Bundle 'klen/python-mode'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
+"Bundle 'lervag/vim-latex'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 " Define runtime-path (rtp) if there is no explicit repo for vim
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 " all three following plugins are needed for vim-snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -71,10 +84,10 @@ Bundle "garbas/vim-snipmate"
 filetype plugin indent on       " required for vundle
 
 "Tomorrow color scheme
-colo Tomorrow-Night-Bright
-if has("gui_macvim")
-    set transparency=10
-endif
+colo Tomorrow-Night-Eighties
+"if has("gui_macvim")
+"    set transparency=10
+"endif
 
 " Close tip-window when selection is done or leaving insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -84,11 +97,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " dont use python-mode autocomplete obsolete now, because of YCM
 let g:pymode_rope = 0
 " only use ycm for python code
-let g:ycm_filetype_whitelist = {'python': 1, 'cpp': 1}
+let g:ycm_filetype_whitelist = {'cpp': 1}
 " set ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " turn off the ycm diagnostic because of struggling with root
-let g:ycm_show_diagnostics_ui = 0
+"let g:ycm_show_diagnostics_ui = 0
 
 " NERDTree Configuration
 " hide some fileextenxions

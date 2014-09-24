@@ -24,8 +24,6 @@ source .zsh-ownrc
 alias ll='ls -Fhla | less -R'
 alias l='ls -lha'
 
-# use consolemode MacVim
-alias vim='mvim -v'
 # gdb with macports
 alias gdb='ggdb'
 # git aliases
@@ -44,15 +42,17 @@ alias me5='sshfs lhcb: ~/mount/e5 && cd ~/mount/e5'
 #alias couchdb='ssh pi@192.168.33.2 -N -L 9000:localhost:5984'
 
 ### Users PATHs ###
+# Uni
 export STUD=~/Documents/Studium/
-export SEM=$STUD/2014\ Sommersemester/
-export HQM=$SEM/HQM/
-export CP=$SEM/ComputationalPhysics/
-export FP=$STUD/FP14/
+export SEM=~/Documents/Studium/2014\ Wintersemester/
+export FP=~/Documents/Studium/FP14/
+export AP=~/Documents/Studium/AP12/
+export PEP=~/Documents/Studium/pep-et-al/
+export E5=~/Documents/Studium/e5/
+
+# Work
 export WORK=~/Documents/Arbeit/
-export FH=$WORK/2014/ItInvFb9/
-export E5=$STUD/e5/
-export PEP=$STUD/pep-et-al/
+export FH=~/Documents/Arbeit/2014/ItInvFb9/
 
 # cool extract function
 function extract()
