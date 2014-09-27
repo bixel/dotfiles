@@ -1,4 +1,32 @@
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+" Define runtime-path (rtp) if there is no explicit repo for vim
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+" all three following plugins are needed for vim-snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" U S E R  S E T U P
 
 "set right encoding
 set encoding=utf-8
@@ -28,7 +56,7 @@ imap kj <Plug>snipMateNextOrTrigger
 
 "configure for guivim if its active
 if has("gui_macvim")
-    set guifont=Meslo\ LG\ S\ for\ Powerline:h13
+    set guifont=Meslo\ LG\ M\ for\ Powerline:h13
 endif
 
 "Set auto inline on
@@ -52,52 +80,15 @@ endif
 
 set expandtab
 
-filetype off       "Required for vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle (required)
-Bundle 'gmarik/vundle'
-
-" Own bundles
-" Only use YCM if macvim is available. YCM is incompatible with vim version <
-" 7.3...
-"if has("gui_macvim")
-"    Bundle 'Valloric/YouCompleteMe'
-"endif
-Bundle 'tpope/vim-pathogen'
-Bundle 'davidhalter/jedi-vim'
-"Bundle 'klen/python-mode'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdtree'
-"Bundle 'lervag/vim-latex'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-" Define runtime-path (rtp) if there is no explicit repo for vim
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-" all three following plugins are needed for vim-snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-
-filetype plugin indent on       " required for vundle
-
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
-"if has("gui_macvim")
-"    set transparency=10
-"endif
 
 " Close tip-window when selection is done or leaving insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
-let g:pymode_rope = 0
-" only use ycm for python code
 let g:ycm_filetype_whitelist = {'cpp': 1}
 " set ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
