@@ -2,6 +2,7 @@
 // short doc here:
 // http://www.hcs.harvard.edu/~jrus/Site/Cocoa%20Text%20System.html
 {
+    "~ " = (insertText:, " ");
     "~a" = (insertText:, "α");
     "~b" = (insertText:, "β");
     "~g" = (insertText:, "γ");
