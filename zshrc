@@ -9,7 +9,7 @@ export ZSH=~/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
-plugins=(git pass macports)
+plugins=(git pass brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,24 +69,3 @@ function extract()
         echo "'$1' is not a valid file!"
     fi
 }
-
-# let me find ROOT maagic
-# (This will perfom some magic to define ROOT paths and stuff)
-if [ -d "/opt/ROOT/" ]; then
-    cd /opt/ROOT/5.34.18/ && source bin/thisroot.sh && cd ~/.
-else
-    if [ -f "/opt/local/bin/root" ]; then
-       cd /opt/local/ && source bin/thisroot.sh && cd ~/.
-    fi
-fi
-
-# let me find the postgresql executables
-export PATH=/opt/local/lib/postgresql93/bin:$PATH
-
-##
-# Your previous /Users/greenapple/.bash_profile file was backed up as /Users/greenapple/.bash_profile.macports-saved_2014-03-07_at_15:37:47
-##
-
-# MacPorts Installer addition on 2014-03-07_at_15:37:47: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
