@@ -82,6 +82,8 @@ endif
 
 set expandtab
 
+set colorcolumn=80
+
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
 
