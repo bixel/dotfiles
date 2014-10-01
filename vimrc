@@ -19,6 +19,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-multiple-cursors'
 " all three following plugins are needed for vim-snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -109,9 +110,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-" allways show tagbar
-"autocmd VimEnter * nested :call tagbar#autoopen(1)
-"let g:tagbar_autoclose = 0
+" multiple-cursors mapping
+let g:multi_cursor_nextkey='<C-d>'
 
 " activate mouse support
 set mouse=a
