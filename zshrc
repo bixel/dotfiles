@@ -36,6 +36,9 @@ export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH'
 ### e5-specific ###
 alias me5='sshfs lhcb: ~/mount/e5 && cd ~/mount/e5'
 
+# root
+alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh'
+
 ### RasPi-Stuff
 #alias dhcpon='sudo /bin/launchctl load -w /System/Library/LaunchDaemons/bootps.plist&&sudo ipconfig set en0 MANUAL 192.168.33.1 255.255.255.0&&echo "DHCP-Server startet for 192.168.33.1"'
 #alias dhcpoff='sudo /bin/launchctl unload -w /System/Library/LaunchDaemons/bootps.plist&&sudo ipconfig set en0 DHCP&&echo "DHCP-Server shut down"'
