@@ -24,6 +24,9 @@ source .zsh-ownrc
 alias ll='ls -Fhla | less -R'
 alias l='ls -lha'
 
+# backup-aliases for rsync
+alias backup-work-pull='rsync --exclude-from=$WORK/devtool-settings/rsync-exclude --numeric-ids -azuhP uber:~/rsync/arbeit/ $WORK'
+
 # git aliases
 alias gits='git status -s'
 # setup ROOT-PATH for python
