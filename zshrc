@@ -39,11 +39,6 @@ alias me5='sshfs lhcb: ~/mount/e5 && cd ~/mount/e5'
 # root
 alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh'
 
-### RasPi-Stuff
-#alias dhcpon='sudo /bin/launchctl load -w /System/Library/LaunchDaemons/bootps.plist&&sudo ipconfig set en0 MANUAL 192.168.33.1 255.255.255.0&&echo "DHCP-Server startet for 192.168.33.1"'
-#alias dhcpoff='sudo /bin/launchctl unload -w /System/Library/LaunchDaemons/bootps.plist&&sudo ipconfig set en0 DHCP&&echo "DHCP-Server shut down"'
-#alias couchdb='ssh pi@192.168.33.2 -N -L 9000:localhost:5984'
-
 ### Users PATHs ###
 # Uni
 export SMD=~/Documents/Studium/2014\ Wintersemester/SMD/
