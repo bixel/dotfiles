@@ -25,7 +25,8 @@ alias ll='ls -Fhla | less -R'
 alias l='ls -lha'
 
 # backup-aliases for rsync
-alias backup-work-pull='rsync --exclude-from=$WORK/devtool-settings/rsync-exclude --numeric-ids -azuhP uber:~/rsync/arbeit/ $WORK'
+alias backup-work-pull='rsync --exclude-from=$WORK/devtool-settings/rsync-exclude --numeric-ids --delete -b --backup-dir=$WORK/.rsync-backup -azuhP uber:~/rsync/arbeit/ $WORK'
+alias backup-work-push='rsync --exclude-from=$WORK/devtool-settings/rsync-exclude --numeric-ids --delete -b --backup-dir=uber:~/rsync/arbeit-backup -azuhP $WORK/ uber:~/rsync/arbeit'
 
 # git aliases
 alias gits='git status -s'
