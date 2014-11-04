@@ -24,8 +24,6 @@ source .zsh-ownrc
 alias ll='ls -Fhla | less -R'
 alias l='ls -lha'
 
-# gdb with macports
-alias gdb='ggdb'
 # git aliases
 alias gits='git status -s'
 # setup ROOT-PATH for python
