@@ -120,5 +120,8 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+" using latex instead of tex
+let g:tex_flavour='latex'
+
 " activate mouse support
 set mouse=a
