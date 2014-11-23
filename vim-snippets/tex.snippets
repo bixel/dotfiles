@@ -12,6 +12,14 @@ snippet fig
 	\begin{figure}
 		${0}
 	\end{figure}
+# Image
+snippet img
+	\begin{figure}
+		\centering
+		\includegraphics[width=${2:0.9}\linewidth]{${1}}
+		\caption{${3}}
+		\label{fig:${4}}
+	\end{figure}
 # Environment
 snippet be
 	\begin{${1:env}}
@@ -38,10 +46,10 @@ snippet frac
 	\frac{${1}}{${2}}${0}
 # ()
 snippet ()
-	\left( ${0} \right)
+	\left(${0}\right)
 # []
 snippet []
-	\left[ ${0} \right]
+	\left[${0}\right]
 # Label
 snippet lab
 	\label{${1}}
