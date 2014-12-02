@@ -22,6 +22,7 @@ Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
+Plugin 'KabbAmine/vCoolor.vim'
 " Plugin 'Townk/vim-autoclose'
 " all three following plugins are needed for vim-snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -125,6 +126,9 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['latextex'] = 'tex'
 let g:snipMate.scope_aliases['plaintex'] = 'tex'
+
+" vCoolor config
+let g:vcoolor_map = '<C-c>'
 
 " activate mouse support
 set mouse=a
