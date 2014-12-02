@@ -45,7 +45,7 @@ alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh'
 
 ### Users PATHs ###
 # Uni
-export SMD=~/Documents/Studium/2014\ Wintersemester/SMD/
+export SMD=~/Documents/Studium/2014\ Wintersemester/SMD/jens-kev/
 export STUD=~/Documents/Studium/
 export SEM=~/Documents/Studium/2014\ Wintersemester/
 export FP=~/Documents/Studium/FP14/
