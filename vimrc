@@ -23,6 +23,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'KabbAmine/vCoolor.vim'
+Plugin 'nvie/vim-flake8'
 " Plugin 'Townk/vim-autoclose'
 " all three following plugins are needed for vim-snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -98,7 +99,7 @@ colo Tomorrow-Night-Eighties
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
-let g:ycm_filetype_whitelist = {'cpp': 1}
+let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1}
 " set ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " turn off the ycm diagnostic because of struggling with root
@@ -129,6 +130,10 @@ let g:snipMate.scope_aliases['plaintex'] = 'tex'
 
 " vCoolor config
 let g:vcoolor_map = '<C-c>'
+
+" configure flake8
+" autorun flake on save
+autocmd BufWritePost *.py call Flake8()
 
 " activate mouse support
 set mouse=a
