@@ -134,6 +134,7 @@ let g:vcoolor_map = '<C-c>'
 " configure flake8
 " autorun flake on save
 autocmd BufWritePost *.py call Flake8()
+let g:flake8_ignore="F403"
 
 " activate mouse support
 set mouse=a
