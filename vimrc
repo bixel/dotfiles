@@ -130,6 +130,9 @@ let g:snipMate.scope_aliases['plaintex'] = 'tex'
 
 " vCoolor config
 let g:vcoolor_map = '<C-c>'
+let g:vcool_ins_rgb_map = ''       " Insert rgb color.
+let g:vcool_ins_hsl_map = ''       " Insert hsl color.
+let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 
 " configure flake8
 " autorun flake on save
