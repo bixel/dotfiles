@@ -43,6 +43,9 @@ alias me5='sshfs lhcb: ~/mount/e5 && cd ~/mount/e5'
 # root
 alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh'
 
+# rapidminer
+alias rapidminer='java -jar -Xmx6G ~/Applications/rapidminer/lib/rapidminer.jar'
+
 ### Users PATHs ###
 # Uni
 export SMD=~/Documents/Studium/2014\ Wintersemester/SMD/jens-kev/
