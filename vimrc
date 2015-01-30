@@ -139,5 +139,8 @@ let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_ignore="F403"
 
+" instant markdown
+let g:instant_markdown_autostart = 0
+
 " activate mouse support
 set mouse=a
