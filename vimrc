@@ -40,14 +40,11 @@ filetype plugin indent on    " required
 set encoding=utf-8
 set fileencoding=utf-8
 
-"use jk for Escape
-inoremap jk <ESC>
-
+" jump between split lines
 map j gj
 map k gk
 
-"lajdflasldflsajflasdlfjslajfsjremap mapleader / to , this vim stuff ist really not thaaaat comfortable if
-"you are not used to it O.o
+"map mapleader / to (german layout)
 let mapleader = ","
 
 "execute current file
@@ -60,42 +57,30 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 
 " trigger snipmate
-imap kj <Plug>snipMateNextOrTrigger
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
+" :w for :W
+command W w
+command Wq w
 
 "configure for guivim if its active
 if has("gui_macvim")
     set guifont=Meslo\ LG\ M\ for\ Powerline:h13
 endif
 
-"Set auto inline on
-set ai
+set ai "Set auto inline on
+set number "Show line numbers
+syntax on "Set syntax highlighting on
 
-"Show line numbers
-set number
-
-"Set syntax highlighting on
-syntax on
-
-" Spaces instead of Tabs
-" Use 4 Spaces as default and 2 Spaces for cpp files
-if expand("%:e")=="cpp"
-    set tabstop=2
-    set shiftwidth=2
-else
-    set tabstop=4
-    set shiftwidth=4
-endif
-
-set expandtab
-
-set colorcolumn=80
+set tabstop=4 " width of tab
+set expandtab " use 'tabstop' spaces instead of tab
+set colorcolumn=80 " Bar hinting for 80 chars
+set breakindent "baby, yeah!
+set mouse=a " activate mouse support
 
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
-
-" Close tip-window when selection is done or leaving insert mode
-"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
@@ -130,14 +115,13 @@ let g:snipMate.scope_aliases['plaintex'] = 'tex'
 
 " vCoolor config
 let g:vcoolor_map = '<C-c>'
-let g:vcool_ins_rgb_map = ''       " Insert rgb color.
-let g:vcool_ins_hsl_map = ''       " Insert hsl color.
+let g:vcool_ins_rgb_map = ''   " Insert rgb color.
+let g:vcool_ins_hsl_map = ''   " Insert hsl color.
 let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 
 " configure flake8
 " autorun flake on save
 autocmd BufWritePost *.py call Flake8()
-let g:flake8_ignore="F403"
 
 " instant markdown
 let g:instant_markdown_autostart = 0
