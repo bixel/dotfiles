@@ -50,7 +50,10 @@ alias rapidminer='java -jar -Xmx6G ~/Applications/rapidminer/lib/rapidminer.jar'
 # Uni
 export SMD=~/Documents/Studium/2014\ Wintersemester/SMD/jens-kev/
 export STUD=~/Documents/Studium/
-export SEM=~/Documents/Studium/2014\ Wintersemester/
+export SEM=~/Documents/Studium/2015\ Sommersemester/
+export ART=~/Documents/Studium/2015\ Sommersemester/ART/
+export Flavour=~/Documents/Studium/2015\ Sommersemester/Flavourphysik/
+export HCP=~/Documents/Studium/2015\ Sommersemester/Hadroncolliderphysics/
 export FP=~/Documents/Studium/FP14/
 export AP=~/Documents/Studium/AP12/
 export PEP=~/Documents/Studium/pep-et-al/
