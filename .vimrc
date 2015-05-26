@@ -15,6 +15,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-startify'
 " Define runtime-path (rtp) if there is no explicit repo for vim
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'altercation/vim-colors-solarized'
