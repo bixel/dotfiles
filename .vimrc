@@ -114,7 +114,6 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
-let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 
 " vCoolor config
 let g:vcoolor_map = '<C-c>'
