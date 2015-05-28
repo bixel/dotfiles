@@ -27,11 +27,11 @@ Plugin 'tpope/vim-markdown'
 Plugin 'KabbAmine/vCoolor.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Raimondi/delimitMate'
-" Plugin 'Townk/vim-autoclose'
+Plugin 'SirVer/ultisnips'
 " all three following plugins are needed for vim-snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "garbas/vim-snipmate"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,13 +59,11 @@ map <C-n> :NERDTreeToggle<CR>
 "open Tagbar with CTRL+m
 map <C-m> :TagbarToggle<CR>
 
-" trigger snipmate
-imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-
 " :w for :W
 command W w
-command Wq w
+command Wq wq
+command Q q
+command WQ wq
 
 "configure for guivim if its active
 if has("gui_macvim")
@@ -112,11 +110,11 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" configure snipmate
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['latextex'] = 'tex'
-let g:snipMate.scope_aliases['plaintex'] = 'tex'
+" configure UltiSnips
+let g:UltiSnipsExpandTrigger='<C-j>'
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 
 " vCoolor config
 let g:vcoolor_map = '<C-c>'
