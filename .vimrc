@@ -77,7 +77,7 @@ set number "Show line numbers
 syntax on "Set syntax highlighting on
 
 set tabstop=4 " width of tab
-set softtabstop=4
+set softtabstop=4 "should be redundant after tabstop and expandtab, but vim-snipmate is messing up (?)
 set shiftwidth=4
 set expandtab " use 'tabstop' spaces instead of tab
 set colorcolumn=80 " Bar hinting for 80 chars
