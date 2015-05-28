@@ -26,6 +26,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'KabbAmine/vCoolor.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'Raimondi/delimitMate'
 " Plugin 'Townk/vim-autoclose'
 " all three following plugins are needed for vim-snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -76,6 +77,8 @@ set number "Show line numbers
 syntax on "Set syntax highlighting on
 
 set tabstop=4 " width of tab
+set softtabstop=4
+set shiftwidth=4
 set expandtab " use 'tabstop' spaces instead of tab
 set colorcolumn=80 " Bar hinting for 80 chars
 set breakindent "baby, yeah!
