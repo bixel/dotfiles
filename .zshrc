@@ -41,23 +41,6 @@ alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh && cd -'
 # rapidminer
 alias rapidminer='java -jar -Xmx6G ~/Applications/rapidminer/lib/rapidminer.jar'
 
-### Users PATHs ###
-# Uni
-export SMD=~/Documents/Studium/2014\ Wintersemester/SMD/jens-kev/
-export STUD=~/Documents/Studium/
-export SEM=~/Documents/Studium/2015\ Sommersemester/
-export ART=~/Documents/Studium/2015\ Sommersemester/ART/
-export Flavour=~/Documents/Studium/2015\ Sommersemester/Flavourphysik/
-export HCP=~/Documents/Studium/2015\ Sommersemester/Hadroncolliderphysics/
-export FP=~/Documents/Studium/FP14/
-export AP=~/Documents/Studium/AP12/
-export PEP=~/Documents/Studium/pep-et-al/
-export E5=~/Documents/Studium/e5/
-
-# Work
-export WORK=~/Documents/Arbeit/
-export FH=~/Documents/Arbeit/2014/ItInvFb9/
-
 # cool extract function
 function extract()
 {
