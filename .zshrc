@@ -36,7 +36,7 @@ alias me5='sshfs lhcb: ~/mount/e5 && cd ~/mount/e5'
 alias mbam='sshfs bam: ~/mount/e5 && cd ~/mount/e5'
 
 # root
-alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh'
+alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh && cd -'
 
 # rapidminer
 alias rapidminer='java -jar -Xmx6G ~/Applications/rapidminer/lib/rapidminer.jar'
