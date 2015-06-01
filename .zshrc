@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 ### U S E R  C O N F I G ###
 
 # Device-specifig setup (ignored by git)
-source .zsh-ownrc
+source .zsh_local
 
 ### ALIASES ###
 # list directory in human readable (-h), listed (-l) way. Show all files (-a).
