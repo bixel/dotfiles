@@ -51,7 +51,9 @@ map k gk
 let mapleader = ","
 
 "execute current file
-nnoremap <leader>e :!%:p<Enter>
+nnoremap <leader>e :!'%:p'<Enter>
+"make
+nnoremap <leader>m :!make<Enter>
 
 "open Nerdtree with CTRL+n
 map <C-n> :NERDTreeToggle<CR>
