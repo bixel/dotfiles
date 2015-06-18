@@ -11,3 +11,10 @@ endsnippet
 snippet cout
 std::cout << ${1} << std::endl;
 endsnippet
+
+snippet #ifndef
+#ifndef ${1:DEFINE}
+#define $1
+$0
+#endif // $1
+endsnippet
