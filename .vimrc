@@ -28,6 +28,7 @@ Plugin 'KabbAmine/vCoolor.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
+Plugin 'rizzatti/dash.vim'
 " all three following plugins are needed for vim-snipmate
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
