@@ -12,9 +12,29 @@ snippet cout
 std::cout << ${1} << std::endl;
 endsnippet
 
-snippet #ifndef
-#ifndef ${1:DEFINE}
+snippet once "Include header once only guard"
+#ifndef ${1:`!p
+if not snip.c:
+	import random, string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
+	snip.rv = ('%s_%s' % (name,rand)).upper()
+else:
+	snip.rv = snip.c`}
 #define $1
-$0
-#endif // $1
+
+${VISUAL}${0}
+
+#endif /* end of include guard: $1 */
+endsnippet
+
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`} {
+	public:
+		${1/(\w+).*/$1/} (${2:arguments});
+		virtual ~${1/(\w+).*/$1/} ();
+	
+	private:
+		${0:/* data */}
+};
 endsnippet
