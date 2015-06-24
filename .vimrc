@@ -84,6 +84,7 @@ set expandtab " use 'tabstop' spaces instead of tab
 set colorcolumn=80 " Bar hinting for 80 chars
 set breakindent "baby, yeah!
 set mouse=a " activate mouse support
+set backspace=indent,eol,start "this is the backspace you want!
 
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
