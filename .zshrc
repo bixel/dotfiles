@@ -9,14 +9,15 @@ export ZSH=~/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
+# Device-specifig setup (ignored by git)
+# source local config first to overwrite default theme if wanted
+source .zsh_local
+
 plugins=(git pass brew)
 
 source $ZSH/oh-my-zsh.sh
 
 ### U S E R  C O N F I G ###
-
-# Device-specifig setup (ignored by git)
-source .zsh_local
 
 ### ALIASES ###
 # list directory in human readable (-h), listed (-l) way. Show all files (-a).
