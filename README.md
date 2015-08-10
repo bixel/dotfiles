@@ -1,10 +1,13 @@
-my conf files
+## my conf files
 
-I am using following symlinks:
+I am just symlinking all the neccessary dotfiles to this repo.
 
-  - `~/.vim/after/ftplugin -> .vim/after/ftplugin`
-  - `~/.vim/snippets -> .vim/snippets`
-  - `~/.vimrc -> .vimrc`
-  - `~/.zshrc -> .zshrc`
+The file `.zsh_local`, referenced in `.zshrc` defines the username (for displaying in OH-MY-ZSH, for example).
+An example for the local configurations is given in `.zsh_local_example`.
 
-The file `.zsh-ownrc`, referenced in `.zshrc` defines the username (for displaying in OH-MY-ZSH, for example).
+There are some other tweaks for OSX, I do not want to miss:
+
+  - Enabling key-repeat via `defaults write -g ApplePressAndHoldEnabled -bool false`
+  - Setting key-repeat rate via `defaults write NSGlobalDomain KeyRepeat -int 1`
+
+The changes take effect after a logout.
