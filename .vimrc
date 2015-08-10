@@ -70,7 +70,7 @@ command WQ wq
 
 "configure for guivim if its active
 if has("gui_macvim")
-    set guifont=Meslo\ LG\ M\ for\ Powerline:h13
+    set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h12
 endif
 
 set ai "Set auto inline on
