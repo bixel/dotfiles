@@ -84,6 +84,11 @@ set breakindent "baby, yeah!
 set mouse=a " activate mouse support
 set backspace=indent,eol,start "this is the backspace you want!
 
+" handling backupfiles
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
 
