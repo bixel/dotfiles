@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 # list directory in human readable (-h), listed (-l) way. Show all files (-a).
 # -F: display an indicator for special list entries (folder, links, etc...)
 alias ll='ls -Fhla | less -R'
-alias l='ls -lha'
+alias l='ls -lhatr'
 
 # git aliases
 alias gits='git status -s'

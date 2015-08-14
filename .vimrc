@@ -29,10 +29,8 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 Plugin 'rizzatti/dash.vim'
-" all three following plugins are needed for vim-snipmate
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "garbas/vim-snipmate"
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'gilligan/vim-lldb'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -91,7 +89,7 @@ colo Tomorrow-Night-Eighties
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
-let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'arduino': 1}
+let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1}
 " set ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
 " turn off the ycm diagnostic because of struggling with root
@@ -132,5 +130,10 @@ autocmd BufWritePost *.py call Flake8()
 " instant markdown
 let g:instant_markdown_autostart = 0
 
+" vebugger
+let g:vebugger_leader = "."
+
 " activate mouse support
 set mouse=a
+
+syn keyword cppExceptions noexcept
