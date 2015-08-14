@@ -142,3 +142,5 @@ let g:vebugger_leader = "."
 set mouse=a
 
 syn keyword cppExceptions noexcept
+
+set noequalalways
