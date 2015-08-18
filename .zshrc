@@ -25,23 +25,6 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -Fhla | less -R'
 alias l='ls -lhatr'
 
-# git aliases
-alias gits='git status -s'
-# setup ROOT-PATH for python
-alias SetupPyROOT='
-export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH&&
-export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH'
-
-### e5-specific ###
-alias me5='sshfs lhcb: ~/mount/e5 && cd ~/mount/e5'
-alias mbam='sshfs bam: ~/mount/e5 && cd ~/mount/e5'
-
-# root
-alias iwantroot='cd $(brew --prefix root) && source libexec/thisroot.sh && cd -'
-
-# rapidminer
-alias rapidminer='java -jar -Xmx6G ~/Applications/rapidminer/lib/rapidminer.jar'
-
 # cool extract function
 function extract()
 {
