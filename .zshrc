@@ -3,6 +3,8 @@
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+export ZSH_CUSTOM=~/.zsh_custom
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -25,18 +27,8 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -Fhla | less -R'
 alias l='ls -lhatr'
 
-# cool extract function
-function extract()
-{
-    if [ -f $1 ]; then
-        case $1 in
-            *.tar.bz2)  tar xvjf $1 ;;
-            *.tar.gz)   tar xvzf $1 ;;
-            *.tar)      tar xvf $1  ;;
-            *.zip)      unzip $1    ;;
-            *)          echo "'$1' cannot be extracted via extract()";;
-        esac
-    else
-        echo "'$1' is not a valid file!"
-    fi
-}
+# vi-mode ❤️ :O
+bindkey -v
+bindkey '^?' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
