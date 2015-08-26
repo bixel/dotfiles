@@ -104,6 +104,10 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
 " hide some fileextenxions
 let NERDTreeIgnore = ['\.pyc$']
 
+" vim-fugitive
+" gdiff vertical instead of horizontal
+set diffopt+=vertical
+
 " Airline stuff
 set laststatus=2
 let g:airline_powerline_fonts = 1
