@@ -9,7 +9,7 @@ export ZSH_CUSTOM=~/.zsh_custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bixel"
+ZSH_THEME="agnoster"
 
 # Device-specifig setup (ignored by git)
 # source local config first to overwrite default theme if wanted
@@ -26,10 +26,3 @@ source $ZSH/oh-my-zsh.sh
 # -F: display an indicator for special list entries (folder, links, etc...)
 alias ll='ls -Fhla | less -R'
 alias l='ls -lhatr'
-
-# vi-mode ❤️ :O
-# not so useful in daily life...
-# bindkey -v
-# bindkey '^?' backward-delete-char
-# bindkey '^w' backward-kill-word
-# bindkey '^r' history-incremental-search-backward
