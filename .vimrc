@@ -144,6 +144,7 @@ let g:vebugger_leader = "."
 
 " activate mouse support
 set mouse=a
+set scrolloff=5
 
 syn keyword cppExceptions noexcept
 

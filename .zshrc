@@ -24,5 +24,4 @@ source $ZSH/oh-my-zsh.sh
 ### ALIASES ###
 # list directory in human readable (-h), listed (-l) way. Show all files (-a).
 # -F: display an indicator for special list entries (folder, links, etc...)
-alias ll='ls -Fhla | less -R'
 alias l='ls -lhatr'
