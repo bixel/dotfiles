@@ -9,5 +9,6 @@ There are some other tweaks for OSX, I do not want to miss:
 
   - Enabling key-repeat via `defaults write -g ApplePressAndHoldEnabled -bool false`
   - Setting key-repeat rate via `defaults write NSGlobalDomain KeyRepeat -int 1`
+  - Setting initial key-repeat rate via `defaults write -g InitialKeyRepeat -int 10`
 
 The changes take effect after a logout.
