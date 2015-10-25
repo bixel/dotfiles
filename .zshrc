@@ -21,7 +21,12 @@ source $ZSH/oh-my-zsh.sh
 
 ### U S E R  C O N F I G ###
 
+# homebrew sbin
+export PATH=/usr/local/sbin:$PATH
+
 ### ALIASES ###
 # list directory in human readable (-h), listed (-l) way. Show all files (-a).
 # -F: display an indicator for special list entries (folder, links, etc...)
 alias l='ls -lhatr'
+
+eval $(thefuck --alias)
