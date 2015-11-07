@@ -24,6 +24,12 @@ source $ZSH/oh-my-zsh.sh
 # homebrew sbin
 export PATH=/usr/local/sbin:$PATH
 
+# random string function
+random-string()
+{
+    LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
+}
+
 ### ALIASES ###
 # list directory in human readable (-h), listed (-l) way. Show all files (-a).
 # -F: display an indicator for special list entries (folder, links, etc...)
