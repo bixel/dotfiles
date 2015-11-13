@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
 Plug 'Shougo/neocomplete.vim'
+Plug 'osyo-manga/vim-marching'
+Plug 'Shougo/vimproc.vim'
+Plug 'osyo-manga/vim-reunions'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -82,13 +85,25 @@ set undodir=~/.vim/undo//
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
 
-" YCM Configuration
-" dont use python-mode autocomplete obsolete now, because of YCM
-let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1}
-" set ycm_extra_conf
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
-" turn off the ycm diagnostic because of struggling with root
-"let g:ycm_show_diagnostics_ui = 0
+" NeoComplete Setup
+let g:neocomplete#enable_at_startup = 1
+" use smartcase
+let g:neocomplete#enable_smart_case = 1
+
+" vim-marching setup
+let g:marching_include_paths = [
+\   "/Users/bixel/binaries/root/include/root"
+\]
+let g:marching_clang_command = "/usr/bin/clang"
+" cooperate with neocomplete.vim
+let g:marching_enable_neocomplete = 1
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+" for c and c++
+let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " NERDTree Configuration
 " hide some fileextenxions
