@@ -1,40 +1,30 @@
-" Using vundle: just git clone https://github.com/gmarik/Vundle.vim.git
-" ~/.vim/bundle/Vundle.vim
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.nvim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rust-lang/rust.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-startify'
+Plug 'Valloric/YouCompleteMe'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'rust-lang/rust.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
 " Define runtime-path (rtp) if there is no explicit repo for vim
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'tpope/vim-markdown'
-Plugin 'KabbAmine/vCoolor.vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'Raimondi/delimitMate'
-Plugin 'SirVer/ultisnips'
-Plugin 'rizzatti/dash.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-" Plugin 'gilligan/vim-lldb'
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'suan/vim-instant-markdown'
+Plug 'tpope/vim-markdown'
+Plug 'KabbAmine/vCoolor.vim'
+Plug 'nvie/vim-flake8'
+Plug 'Raimondi/delimitMate'
+Plug 'SirVer/ultisnips'
+Plug 'rizzatti/dash.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'gilligan/vim-lldb'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()            " required
 
 " U S E R  S E T U P
 
