@@ -54,6 +54,7 @@ map <C-m> :TagbarToggle<CR>
 command W w
 command Wq wq
 command Q q
+command Qa qa
 command WQ wq
 
 "configure for guivim if its active
@@ -136,6 +137,8 @@ let g:vebugger_leader = "."
 set mouse=a
 set scrolloff=5
 
+" add some cpp-keywords
 syn keyword cppExceptions noexcept
 
+" allow mouse clicks to change cursor position
 set noequalalways
