@@ -22,6 +22,9 @@ Plug 'SirVer/ultisnips'
 Plug 'rizzatti/dash.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'gilligan/vim-lldb'
+Plug 'atelierbram/vim-colors_atelier-schemes'
+Plug 'baeuml/summerfruit256.vim'
+Plug 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
