@@ -90,7 +90,7 @@ colo Tomorrow-Night-Eighties
 " dont use python-mode autocomplete obsolete now, because of YCM
 let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1}
 " set ycm_extra_conf
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
 " turn off the ycm diagnostic because of struggling with root
 "let g:ycm_show_diagnostics_ui = 0
 
