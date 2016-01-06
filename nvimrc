@@ -145,3 +145,7 @@ syn keyword cppExceptions noexcept
 
 " allow mouse clicks to change cursor position
 set noequalalways
+
+" list whitespaces and some other characters
+set listchars=tab:>-,trail:~
+set list
