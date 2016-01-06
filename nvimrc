@@ -79,9 +79,9 @@ set mouse=a " activate mouse support
 set backspace=indent,eol,start "this is the backspace you want!
 
 " handling backupfiles
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+set backupdir=~/.nvim/backup//
+set directory=~/.nvim/swap//
+set undodir=~/.nvim/undo//
 
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
