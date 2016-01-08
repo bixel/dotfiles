@@ -1,0 +1,24 @@
+- clean: ['~']
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    ~/.dotfiles: ''
+    ~/.zpreztorc: zpreztorc
+    ~/.zprofile: zprofile
+    ~/.zshrc: zshrc
+    ~/.nvimrc: nvimrc
+    ~/.vimrc: vimrc
+    ~/.vim/after/ftplugin:
+        create: true
+        path: vim/after/ftplugin/
+    ~/.nvim/after/ftplugin:
+        create: true
+        path: vim/after/ftplugin/
+    ~/.vim/UltiSnips:
+        relink: true
+        path: vim/UltiSnips/
+    ~/.nvim/UltiSnips:
+        relink: true
+        path: vim/UltiSnips/
