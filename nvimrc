@@ -23,6 +23,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'lervag/vimtex'
 " Plug 'gilligan/vim-lldb'
 Plug 'atelierbram/vim-colors_atelier-schemes'
 Plug 'baeuml/summerfruit256.vim'
@@ -87,6 +88,8 @@ set undodir=~/.nvim/undo//
 
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
+hi clear SpellBad
+hi SpellBad cterm=undercurl
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
