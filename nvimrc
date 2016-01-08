@@ -21,6 +21,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'rizzatti/dash.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 " Plug 'gilligan/vim-lldb'
 Plug 'atelierbram/vim-colors_atelier-schemes'
 Plug 'baeuml/summerfruit256.vim'
@@ -149,3 +151,5 @@ set noequalalways
 " list whitespaces and some other characters
 set listchars=tab:>-,trail:~
 set list
+
+let g:tex_flavour="latex"
