@@ -1,28 +1,13 @@
-### O H - M Y - Z S H  C O N F I G ###
-
-## Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
-
-export ZSH_CUSTOM=~/.zsh_custom
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
-
 # Device-specifig setup (ignored by git)
 # source local config first to overwrite default theme if wanted
 source .zsh_local
 
-plugins=(git pass brew)
-
-source $ZSH/oh-my-zsh.sh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 ### U S E R  C O N F I G ###
-
-# homebrew sbin
-export PATH=/usr/local/sbin:$PATH
 
 # random string function
 random-string()
@@ -30,9 +15,21 @@ random-string()
     LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
 }
 
-### ALIASES ###
-# list directory in human readable (-h), listed (-l) way. Show all files (-a).
-# -F: display an indicator for special list entries (folder, links, etc...)
-alias l='ls -lhatr'
+#
+# Aliases
+#
 
-eval $(thefuck --alias)
+# Git
+alias glol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glola="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+
+# Utility
+alias rm="nocorrect rm"
+
+#
+# Python
+#
+
+# virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUAL_ENV_DISABLE_PROMT=yes
