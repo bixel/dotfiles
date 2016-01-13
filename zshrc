@@ -31,5 +31,5 @@ alias rm="nocorrect rm"
 #
 
 # virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+source virtualenvwrapper.sh
 export VIRTUAL_ENV_DISABLE_PROMT=yes
