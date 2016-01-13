@@ -89,7 +89,7 @@ set undodir=~/.nvim/undo//
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
 hi clear SpellBad
-hi SpellBad cterm=undercurl
+hi SpellBad cterm=undercurl ctermbg=none ctermfg=lightyellow
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
