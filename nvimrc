@@ -31,13 +31,11 @@ Plug 'baeuml/summerfruit256.vim'
 Plug 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
-call plug#end()            " required
+call plug#end()  " required
 
+"
 " U S E R  S E T U P
-
-"set right encoding
-set encoding=utf-8
-set fileencoding=utf-8
+"
 
 " jump between split lines
 map j gj
@@ -46,15 +44,15 @@ map k gk
 "map mapleader / to (german layout)
 let mapleader = ","
 
-"execute current file
+" execute current file
 nnoremap <leader>e :!'%:p'<Enter>
-"make
+" Run `make` in current directory
 nnoremap <leader>m :!make<Enter>
 
-"open Nerdtree with CTRL+n
+" open Nerdtree with CTRL+n
 map <C-n> :NERDTreeToggle<CR>
 
-"open Tagbar with CTRL+m
+" open Tagbar with CTRL+m
 map <C-m> :TagbarToggle<CR>
 
 " :w for :W
@@ -64,23 +62,19 @@ command Q q
 command Qa qa
 command WQ wq
 
-"configure for guivim if its active
-if has("gui_macvim")
-    set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h12
-endif
+set ai  " Set auto inline on
+set number  " Show line numbers
+syntax on  " Set syntax highlighting on
 
-set ai "Set auto inline on
-set number "Show line numbers
-syntax on "Set syntax highlighting on
-
-set tabstop=4 " width of tab
-set softtabstop=4 "should be redundant after tabstop and expandtab, but vim-snipmate is messing up (?)
+set tabstop=4  " width of tab
+" should be redundant after tabstop and expandtab,
+" but vim-snipmate is messing up (?)
+set softtabstop=4
 set shiftwidth=4
-set expandtab " use 'tabstop' spaces instead of tab
-set colorcolumn=80 " Bar hinting for 80 chars
-set breakindent "baby, yeah!
-set mouse=a " activate mouse support
-set backspace=indent,eol,start "this is the backspace you want!
+set expandtab  " use 'tabstop' spaces instead of tab
+set colorcolumn=80  " Bar hinting for 80 chars
+set breakindent " baby, yeah!
+set mouse=a  " activate mouse support
 
 " handling backupfiles
 set backupdir=~/.nvim/backup//
@@ -128,19 +122,16 @@ let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 
 " vCoolor config
 let g:vcoolor_map = '<C-c>'
-let g:vcool_ins_rgb_map = ''   " Insert rgb color.
-let g:vcool_ins_hsl_map = ''   " Insert hsl color.
+let g:vcool_ins_rgb_map = ''  " Insert rgb color.
+let g:vcool_ins_hsl_map = ''  " Insert hsl color.
 let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 
 " configure flake8
-" autorun flake on save
-autocmd BufWritePost *.py call Flake8()
+" bind `,f` to Flake8
+nnoremap <leader>f :call Flake8()<CR>
 
 " instant markdown
 let g:instant_markdown_autostart = 0
-
-" vebugger
-let g:vebugger_leader = "."
 
 " activate mouse support
 set mouse=a
@@ -156,4 +147,5 @@ set noequalalways
 set listchars=tab:>-,trail:~
 set list
 
+" use latex flavour for plaintex files
 let g:tex_flavour="latex"
