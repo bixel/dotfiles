@@ -15,6 +15,18 @@ random-string()
     LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
 }
 
+# make code printable with pandocs
+# printable-code filename.ext [forced-extension]
+printable-code()
+{
+    body=`cat ${1}`
+    [[ ${1} =~ "([^.]+).([^.]+)" ]] && name=$match[1] && ext=$match[2]
+    ext=`test -n "${2}" && echo ${2} || echo $ext`
+    doc="# ${1}\n\`\`\`$ext\n$body\n\`\`\`"
+    oformat=`test -n "${3}" && echo ${3} || "pdf"`
+    echo $doc | pandoc -o "$name.$oformat"
+}
+
 #
 # Aliases
 #
