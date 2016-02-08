@@ -23,7 +23,7 @@ printable-code()
     [[ ${1} =~ "([^.]+).([^.]+)" ]] && name=$match[1] && ext=$match[2]
     ext=`test -n "${2}" && echo ${2} || echo $ext`
     doc="# ${1}\n\`\`\`$ext\n$body\n\`\`\`"
-    oformat=`test -n "${3}" && echo ${3} || "pdf"`
+    oformat=`test -n "${3}" && echo ${3} || echo "pdf"`
     echo $doc | pandoc -o "$name.$oformat"
 }
 
