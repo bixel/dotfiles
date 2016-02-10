@@ -72,10 +72,11 @@ set tabstop=4  " width of tab
 " but vim-snipmate is messing up (?)
 set softtabstop=4
 set shiftwidth=4
-set expandtab  " use 'tabstop' spaces instead of tab
-set colorcolumn=80  " Bar hinting for 80 chars
-set breakindent " baby, yeah!
-set mouse=a  " activate mouse support
+set expandtab " use 'tabstop' spaces instead of tab
+set colorcolumn=80 " Bar hinting for 80 chars
+set breakindent "baby, yeah!
+set mouse=a " activate mouse support
+set ignorecase " ignore case while searching
 
 " handling backupfiles
 set backupdir=~/.nvim/backup//
