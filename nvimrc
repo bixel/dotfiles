@@ -1,3 +1,5 @@
+let &rtp = "~/.nvim" . "," . &rtp
+
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.nvim/plugged')
 
