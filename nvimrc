@@ -1,7 +1,5 @@
-let &rtp = "~/.nvim" . "," . &rtp
-
 " set the runtime path to include Vundle and initialize
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'majutsushi/tagbar'
@@ -81,9 +79,9 @@ set mouse=a " activate mouse support
 set ignorecase " ignore case while searching
 
 " handling backupfiles
-set backupdir=~/.nvim/backup//
-set directory=~/.nvim/swap//
-set undodir=~/.nvim/undo//
+set backupdir=~/.config/nvim/backup//
+set directory=~/.config/nvim/swap//
+set undodir=~/.config/nvim/undo//
 
 "Tomorrow color scheme
 colo Tomorrow-Night-Eighties
