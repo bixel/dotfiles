@@ -30,6 +30,7 @@ Plug 'ap/vim-css-color'
 Plug 'atelierbram/vim-colors_atelier-schemes'
 Plug 'baeuml/summerfruit256.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -127,6 +128,10 @@ let g:vcoolor_map = '<C-c>'
 let g:vcool_ins_rgb_map = ''  " Insert rgb color.
 let g:vcool_ins_hsl_map = ''  " Insert hsl color.
 let g:vcool_ins_rgba_map = ''  " Insert rgba color.
+
+" Enable emmet-vim just for html/css
+let g:user_emmet_isntall_global = 0
+autocmd FileType html,css EmmetInstall
 
 " configure flake8
 " bind `,f` to Flake8
