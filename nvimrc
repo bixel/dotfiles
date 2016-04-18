@@ -96,6 +96,8 @@ let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1}
 let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
 " turn off the ycm diagnostic because of struggling with root
 "let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " NERDTree Configuration
 " hide some fileextenxions
@@ -145,7 +147,7 @@ set mouse=a
 set scrolloff=5
 
 " add some cpp-keywords
-syn keyword cppExceptions noexcept
+syn keyword cppExceptions noexcept using
 
 " allow mouse clicks to change cursor position
 set noequalalways
