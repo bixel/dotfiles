@@ -1,9 +1,9 @@
 ## my conf files
+Using [dotbot](https://github.com/anishathalye/dotbot) its awesome.
 
-I am just symlinking all the neccessary dotfiles to this repo.
+I'm using a fork of `instant-markdown-d` which uses KaTeX for maths:
 
-The file `.zsh_local`, referenced in `.zshrc` defines the username (for displaying in OH-MY-ZSH, for example).
-An example for the local configurations is given in `.zsh_local_example`.
+    npm install -g git+https://github.com/peteruhnak/instant-markdown-d.git
 
 There are some other tweaks for OSX, I do not want to miss:
 
