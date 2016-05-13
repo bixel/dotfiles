@@ -32,6 +32,7 @@ Plug 'atelierbram/vim-colors_atelier-schemes'
 Plug 'baeuml/summerfruit256.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
+Plug 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
