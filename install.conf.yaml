@@ -20,4 +20,6 @@
         create: true
         relink: true
         path: external/vim-plug/plug.vim
-    ~/.zprezto: external/zprezto/
+    ~/.zprezto:
+        relink: true
+        path: external/prezto/
