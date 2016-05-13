@@ -33,6 +33,9 @@ Plug 'baeuml/summerfruit256.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'pangloss/vim-javascript'
+Plug 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -132,6 +135,9 @@ let g:vcoolor_map = '<C-c>'
 let g:vcool_ins_rgb_map = ''  " Insert rgb color.
 let g:vcool_ins_hsl_map = ''  " Insert hsl color.
 let g:vcool_ins_rgba_map = ''  " Insert rgba color.
+
+" vim-javascript config
+let g:javascript_enable_domhtmlcss = 1
 
 " Enable emmet-vim just for html/css
 let g:user_emmet_isntall_global = 0
