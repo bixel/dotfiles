@@ -28,9 +28,6 @@ Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 " Plug 'gilligan/vim-lldb'
 Plug 'critiqjo/lldb.nvim'
-Plug 'atelierbram/vim-colors_atelier-schemes'
-Plug 'baeuml/summerfruit256.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -89,8 +86,9 @@ set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
 set undodir=~/.config/nvim/undo//
 
-"Tomorrow color scheme
-colo Tomorrow-Night-Eighties
+" color scheme
+set background=light
+colo solarized
 hi clear SpellBad
 hi SpellBad cterm=undercurl ctermbg=none ctermfg=lightyellow
 
