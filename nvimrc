@@ -89,8 +89,6 @@ set undodir=~/.config/nvim/undo//
 " color scheme
 set background=light
 colo solarized
-hi clear SpellBad
-hi SpellBad cterm=undercurl ctermbg=none ctermfg=lightyellow
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
