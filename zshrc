@@ -27,6 +27,12 @@ printable-code()
     echo $doc | pandoc -o "$name.$oformat"
 }
 
+# make the clipboard working on remote
+if [[ "$SSH_CLIENT" ]]; then
+  SSH_IP=$(echo $SSH_CLIENT | awk '{print $1}')
+  alias pbcopy="ssh $SSH_IP pbcopy"
+fi
+
 #
 # Aliases
 #
