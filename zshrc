@@ -1,6 +1,6 @@
 # Device-specifig setup (ignored by git)
 # source local config first to overwrite default theme if wanted
-source .zsh_local
+source ~/.zsh_local
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
