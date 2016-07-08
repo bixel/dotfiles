@@ -40,6 +40,7 @@ fi
 # Git
 alias glol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glola="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias imgcat="~/.dotfiles/imgcat"
 
 # Utility
 alias rm="nocorrect rm"
@@ -51,3 +52,5 @@ alias rm="nocorrect rm"
 # virtualenvwrapper
 source virtualenvwrapper.sh
 export VIRTUAL_ENV_DISABLE_PROMT=yes
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
