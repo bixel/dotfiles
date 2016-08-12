@@ -49,15 +49,20 @@ map k gk
 let mapleader = ","
 
 " execute current file
-nnoremap <leader>e :!'%:p'<Enter>
+nnoremap <leader>e :!'%:p'<CR>
 " Run `make` in current directory
-nnoremap <leader>m :!make<Enter>
+nnoremap <leader>m :!make<CR>
+" open build/*.pdf
+nnoremap <leader>o :!open build/*.pdf<CR>
 
 " open Nerdtree with CTRL+n
 map <C-n> :NERDTreeToggle<CR>
 
 " open Tagbar with CTRL+m
 map <C-m> :TagbarToggle<CR>
+
+" toggle background with CTRL+I
+map <C-I> :let &background = (&background == "dark" ? "light" : "dark")<CR>
 
 " :w for :W
 command W w
@@ -134,6 +139,11 @@ let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 
 " vim-javascript config
 let g:javascript_enable_domhtmlcss = 1
+
+" limelight+goyo settings
+let g:limelight_conceal_ctermfg = 'gray'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Enable emmet-vim just for html/css
 let g:user_emmet_isntall_global = 0
