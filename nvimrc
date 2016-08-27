@@ -33,6 +33,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -144,6 +145,7 @@ let g:javascript_enable_domhtmlcss = 1
 let g:limelight_conceal_ctermfg = 'gray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+nnoremap <leader>g :Goyo<CR>
 
 " Enable emmet-vim just for html/css
 let g:user_emmet_isntall_global = 0
