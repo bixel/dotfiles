@@ -10,6 +10,7 @@
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
+    ~/.config/flake8: flake8
     ~/.config/nvim/init.vim: nvimrc
     ~/.config/nvim/after/ftplugin:
         create: true
