@@ -50,7 +50,9 @@ alias rm="nocorrect rm"
 #
 
 # virtualenvwrapper
-source virtualenvwrapper.sh
-export VIRTUAL_ENV_DISABLE_PROMT=yes
+if [ -f ~/virtualenvwrapper.sh ]; then
+    source ~/virtualenvwrapper.sh
+    export VIRTUAL_ENV_DISABLE_PROMT=yes
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
