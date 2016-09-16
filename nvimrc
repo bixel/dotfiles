@@ -176,7 +176,7 @@ set list
 let g:tex_flavour="latex"
 " set some default options for my personal latexmk
 let g:vimtex_latexmk_options=" -lualatex
-                            \ -output-directory=build
+                            \ -jobname=./build/document
                             \ -interaction=nonstopmode
                             \ -halt-on-error
                             \ -pvc"
