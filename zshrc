@@ -27,6 +27,11 @@ printable-code()
     echo $doc | pandoc -o "$name.$oformat"
 }
 
+# mount a remote host at /MountPoint/bla-home
+mounthome () {
+ sshfs $1: /MountPoints/$1-home -o auto_cache,reconnect,volname=$1-home,no_readahead,noappledouble,nolocalcaches
+}
+
 # make the clipboard working on remote
 if [[ -n "$SSH_CLIENT" ]]; then
   SSH_IP=$(echo $SSH_CLIENT | awk '{print $1}')
