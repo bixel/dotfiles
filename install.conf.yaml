@@ -25,4 +25,4 @@
     ~/.zprezto:
         relink: true
         path: external/prezto/
-    /usr/local/bin/syncIgnore: scripts/btsyncIgnore
+    /usr/local/bin/syncIgnore: scripts/syncIgnore
