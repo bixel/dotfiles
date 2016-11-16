@@ -34,6 +34,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
+Plug 'othree/yajs.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -98,7 +99,7 @@ colo solarized
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
-let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1}
+let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1, 'js': 1}
 " set ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
 " turn off the ycm diagnostic because of struggling with root
