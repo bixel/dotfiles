@@ -73,6 +73,9 @@ command Q q
 command Qa qa
 command WQ wq
 
+" color scheme
+colo solarized
+
 set ai  " Set auto inline on
 set number  " Show line numbers
 syntax on  " Set syntax highlighting on
@@ -92,10 +95,6 @@ set ignorecase " ignore case while searching
 set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
 set undodir=~/.config/nvim/undo//
-
-" color scheme
-set background=light
-colo solarized
 
 " YCM Configuration
 " dont use python-mode autocomplete obsolete now, because of YCM
