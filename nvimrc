@@ -43,6 +43,10 @@ call plug#end()  " required
 " U S E R  S E T U P
 "
 
+" Recursive file search
+set path+=**
+set wildmenu
+
 " jump between split lines
 map j gj
 map k gk
@@ -105,6 +109,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
 "let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_path_to_python_interpreter='/usr/local/bin/python'
 
 " NERDTree Configuration
 " hide some fileextenxions
