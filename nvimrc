@@ -35,6 +35,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
 Plug 'othree/yajs.vim'
+Plug 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -50,6 +51,8 @@ set wildmenu
 " jump between split lines
 map j gj
 map k gk
+
+set relativenumber  " aka :set rnu
 
 "map mapleader / to (german layout)
 let mapleader = ","
@@ -128,8 +131,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " multiple-cursors mapping
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " configure UltiSnips
