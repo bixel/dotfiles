@@ -160,7 +160,7 @@ nnoremap <leader>g :Goyo<CR>
 
 " Enable emmet-vim just for html/css
 let g:user_emmet_isntall_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,md EmmetInstall
 
 " configure flake8
 " bind `,f` to Flake8
