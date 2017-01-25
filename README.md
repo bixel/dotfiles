@@ -12,3 +12,8 @@ There are some other tweaks for OSX, I do not want to miss:
   - Setting initial key-repeat rate via `defaults write -g InitialKeyRepeat -int 10`
 
 The changes take effect after a logout.
+
+## vim cheat sheet
+
+**git**
+- navigate history of current file: `:Glog`, `:cc`, `:cn`, every other quickfix nav
