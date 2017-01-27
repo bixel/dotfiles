@@ -5,37 +5,35 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 " Define runtime-path (rtp) if there is no explicit repo for vim
-Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'suan/vim-instant-markdown'
+Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'nvie/vim-flake8'
-Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
-Plug 'rizzatti/dash.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
-" Plug 'gilligan/vim-lldb'
-Plug 'critiqjo/lldb.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -46,7 +44,6 @@ call plug#end()  " required
 
 " Recursive file search
 set path+=**
-set wildmenu
 
 " Make watchdogs possible
 set backupcopy=yes
@@ -54,6 +51,12 @@ set backupcopy=yes
 " jump between split lines
 map j gj
 map k gk
+
+" navigate split panes with ctrl-h/j/k/l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
 
 set relativenumber  " aka :set rnu
 
@@ -126,7 +129,6 @@ let NERDTreeIgnore = ['\.pyc$']
 set diffopt+=vertical
 
 " Airline stuff
-set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -150,10 +152,11 @@ let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 " vim-javascript config
 let g:javascript_enable_domhtmlcss = 1
 
-" limelight+goyo settings
+" limelight+goyo settings, automatically fire up limelight with goyo
 let g:limelight_conceal_ctermfg = 'gray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+" map `,g` to start goyo
 nnoremap <leader>g :Goyo<CR>
 
 " Enable emmet-vim just for html/css

@@ -7,3 +7,6 @@
 [submodule "external/prezto"]
 	path = external/prezto
 	url = git@github.com:bixel/prezto.git
+[submodule "external/tpm"]
+	path = external/tpm
+	url = https://github.com/tmux-plugins/tpm.git

@@ -1,3 +1,8 @@
+# instantaneously start tmux, if available
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
 # Device-specifig setup (ignored by git)
 # source local config first to overwrite default theme if wanted
 source ~/.zsh_local
