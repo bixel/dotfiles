@@ -48,6 +48,9 @@ call plug#end()  " required
 set path+=**
 set wildmenu
 
+" Make watchdogs possible
+set backupcopy=yes
+
 " jump between split lines
 map j gj
 map k gk
