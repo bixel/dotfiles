@@ -4,7 +4,7 @@ source ~/.zsh_local
 
 # instantaneously start tmux, if available
 if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+  [ -z $TMUX ] && exec tmux new-session -A -s main
 fi
 
 # Source Prezto.
