@@ -65,6 +65,6 @@ if [ -f ~/virtualenvwrapper.sh ]; then
     export VIRTUAL_ENV_DISABLE_PROMT=yes
 fi
 
-if [ -f ~/.iterm2_shell_integration.zsh ]; then
+if [[ -n "$ITERM_INTEGRATION" && -f ~/.iterm2_shell_integration.zsh ]]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
