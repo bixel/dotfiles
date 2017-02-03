@@ -55,11 +55,7 @@ set clipboard=unnamed
 map j gj
 map k gk
 
-" navigate split panes with ctrl-h/j/k/l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-nnoremap <c-h> <c-w>h
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 set relativenumber  " aka :set rnu
 
