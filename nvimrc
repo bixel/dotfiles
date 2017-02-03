@@ -48,6 +48,9 @@ set path+=**
 " Make watchdogs possible
 set backupcopy=yes
 
+" see https://github.com/tmux/tmux/issues/543
+set clipboard=unnamed
+
 " jump between split lines
 map j gj
 map k gk
