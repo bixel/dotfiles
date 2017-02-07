@@ -2,10 +2,12 @@
 # source local config first to overwrite default theme if wanted
 source ~/.zsh_local
 
-# instantaneously start tmux, if available
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
-fi
+# start tmux in a nice way, if available
+t () {
+  if command -v tmux>/dev/null; then
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+  fi
+}
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -17,19 +19,19 @@ fi
 # random string function
 random-string()
 {
-    LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
+  LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
 }
 
 # make code printable with pandocs
 # printable-code filename.ext [forced-extension]
 printable-code()
 {
-    body=`cat ${1}`
-    [[ ${1} =~ "([^.]+).([^.]+)" ]] && name=$match[1] && ext=$match[2]
-    ext=`test -n "${2}" && echo ${2} || echo $ext`
-    doc="# ${1}\n\`\`\`$ext\n$body\n\`\`\`"
-    oformat=`test -n "${3}" && echo ${3} || echo "pdf"`
-    echo $doc | pandoc -o "$name.$oformat"
+  body=`cat ${1}`
+  [[ ${1} =~ "([^.]+).([^.]+)" ]] && name=$match[1] && ext=$match[2]
+  ext=`test -n "${2}" && echo ${2} || echo $ext`
+  doc="# ${1}\n\`\`\`$ext\n$body\n\`\`\`"
+  oformat=`test -n "${3}" && echo ${3} || echo "pdf"`
+  echo $doc | pandoc -o "$name.$oformat"
 }
 
 # mount a remote host at /MountPoint/bla-home
@@ -61,10 +63,10 @@ alias rm="nocorrect rm"
 
 # virtualenvwrapper
 if [ -f ~/virtualenvwrapper.sh ]; then
-    source ~/virtualenvwrapper.sh
-    export VIRTUAL_ENV_DISABLE_PROMT=yes
+  source ~/virtualenvwrapper.sh
+  export VIRTUAL_ENV_DISABLE_PROMT=yes
 fi
 
 if [[ -n "$ITERM_INTEGRATION" && -f ~/.iterm2_shell_integration.zsh ]]; then
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
