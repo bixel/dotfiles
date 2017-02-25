@@ -5,7 +5,7 @@ source ~/.zsh_local
 # start tmux in a nice way, if available
 t () {
   if command -v tmux>/dev/null; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new-session -A -s main
   fi
 }
 
