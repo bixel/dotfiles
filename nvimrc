@@ -45,6 +45,9 @@ call plug#end()  " required
 " Recursive file search
 set path+=**
 
+" Ignore some stuff esp. for ctrlP
+set wildignore+=*/node_modules/*
+
 " Make watchdogs possible
 set backupcopy=yes
 
