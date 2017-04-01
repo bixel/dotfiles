@@ -34,6 +34,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'roxma/vim-tmux-clipboard'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -50,9 +51,6 @@ set wildignore+=*/node_modules/*
 
 " Make watchdogs possible
 set backupcopy=yes
-
-" see https://github.com/tmux/tmux/issues/543
-set clipboard=unnamed
 
 " jump between split lines
 map j gj
