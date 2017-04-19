@@ -39,6 +39,11 @@ mounthome () {
  sshfs $1: /MountPoints/$1-home -o auto_cache,reconnect,volname=$1-home,no_readahead,noappledouble,nolocalcaches
 }
 
+# use the symlinked ssh-auth-sock if available
+if [[ -f "$HOME/.ssh/ssh_auth_sock" ]]; then
+    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock;
+fi
+
 # make the clipboard working on remote
 if [[ -n "$SSH_CLIENT" ]]; then
   SSH_IP=$(echo $SSH_CLIENT | awk '{print $1}')
