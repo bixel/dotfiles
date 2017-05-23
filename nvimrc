@@ -5,7 +5,6 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 " Define runtime-path (rtp) if there is no explicit repo for vim
@@ -116,10 +115,8 @@ let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1, 'j
 " set ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
 " turn off the ycm diagnostic because of struggling with root
-"let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_path_to_python_interpreter='/usr/local/bin/python'
 
 " NERDTree Configuration
 " hide some fileextenxions
