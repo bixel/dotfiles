@@ -35,6 +35,7 @@ Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
+Plug 'Chiel92/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -47,7 +48,7 @@ call plug#end()  " required
 set path+=**
 
 " Ignore some stuff esp. for ctrlP
-set wildignore+=*/node_modules/*
+set wildignore+=*/node_modules/*,*/build*/*,*/InstallArea/*
 
 " Make watchdogs possible
 set backupcopy=yes
