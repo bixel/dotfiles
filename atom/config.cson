@@ -1,0 +1,18 @@
+"*":
+  core:
+    disabledPackages: [
+      "whitespace"
+    ]
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    fontFamily: "Source Code Pro"
+    fontSize: 16
+  "exception-reporting":
+    userId: "ab2d6c57-858a-4413-8c4b-c8beb7547064"
+  "trailing-spaces": {}
+  whitespace:
+    ensureSingleTrailingNewline: false
+    ignoreWhitespaceOnCurrentLine: false

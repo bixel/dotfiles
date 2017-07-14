@@ -27,3 +27,7 @@
         path: external/prezto/
     /usr/local/bin/syncIgnore: scripts/syncIgnore
     ~/.ssh/rc: sshrc
+    ~/.atom:
+        relink: true
+        path: atom/
+        create: true
