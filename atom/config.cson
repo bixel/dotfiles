@@ -13,6 +13,8 @@
   "exception-reporting":
     userId: "ab2d6c57-858a-4413-8c4b-c8beb7547064"
   "trailing-spaces": {}
+  welcome:
+    showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
     ignoreWhitespaceOnCurrentLine: false
