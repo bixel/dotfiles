@@ -34,9 +34,15 @@ printable-code()
   echo $doc | pandoc -o "$name.$oformat"
 }
 
-# mount a remote host at /MountPoint/bla-home
-mounthome () {
- sshfs $1: /MountPoints/$1-home -o auto_cache,reconnect,volname=$1-home,no_readahead,noappledouble,nolocalcaches
+# mount a remote's ($1) host dir ($2) at /MountPoint/$1
+mountremote () {
+  if [ -z "$2" ]; then
+      mountpoint=$1-home
+  else
+      mountpoint=$1-`echo $2 | sed -E "s/\///g"`
+  fi
+  mkdir -p /MountPoints/$mountpoint
+  sshfs $1:$2 "/MountPoints/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
 }
 
 # use the symlinked ssh-auth-sock if available
