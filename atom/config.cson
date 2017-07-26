@@ -1,20 +1,42 @@
 "*":
+  "autocomplete-python":
+    useKite: false
   core:
+    closeDeletedFileTabs: true
     disabledPackages: [
-      "whitespace"
+      "git-time-machine"
+      "markdown-preview"
     ]
+    telemetryConsent: "no"
     themes: [
       "one-light-ui"
       "solarized-light-syntax"
     ]
   editor:
+    autoIndentOnPaste: false
     fontFamily: "Source Code Pro"
     fontSize: 16
+    invisibles: {}
   "exception-reporting":
-    userId: "ab2d6c57-858a-4413-8c4b-c8beb7547064"
-  "trailing-spaces": {}
+    userId: "f97fbf72-4900-4b83-9479-351989e3d1bc"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "linter-ui-default":
+    panelHeight: 226
+  "markdown-preview-plus":
+    enableLatexRenderingByDefault: true
+  "minimap-plus": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+  "vim-mode-plus":
+    useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
-  whitespace:
-    ensureSingleTrailingNewline: false
-    ignoreWhitespaceOnCurrentLine: false
+  "you-complete-me":
+    globalExtraConfig: "~/.ycm_extra_conf.py"
+    pythonExecutable: "python3"
+    ycmdPath: "/Users/kheinicke/repos/ycmd/"
