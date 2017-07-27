@@ -1,3 +1,12 @@
 packages: [
+  "autocomplete-python"
+  "busy-signal"
+  "hyperclick"
+  "intentions"
+  "linter"
+  "linter-ui-default"
+  "markdown-preview-plus"
   "package-sync"
+  "vim-mode-plus"
+  "you-complete-me"
 ]

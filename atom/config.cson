@@ -26,6 +26,9 @@
   "markdown-preview-plus":
     enableLatexRenderingByDefault: true
   "minimap-plus": {}
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
