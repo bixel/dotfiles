@@ -6,7 +6,9 @@ packages: [
   "linter"
   "linter-ui-default"
   "markdown-preview-plus"
+  "minimap-plus"
   "package-sync"
+  "scroll-through-time"
   "vim-mode-plus"
   "you-complete-me"
 ]
