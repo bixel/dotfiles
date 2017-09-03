@@ -25,7 +25,9 @@
     panelHeight: 226
   "markdown-preview-plus":
     enableLatexRenderingByDefault: true
-  "minimap-plus": {}
+  "minimap-plus":
+    absoluteMode: true
+    adjustAbsoluteModeHeight: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true
@@ -39,6 +41,9 @@
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
   "you-complete-me":
     globalExtraConfig: "~/.ycm_extra_conf.py"
     pythonExecutable: "python3"

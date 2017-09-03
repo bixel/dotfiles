@@ -1,6 +1,7 @@
 packages: [
   "autocomplete-python"
   "busy-signal"
+  "ex-mode"
   "hyperclick"
   "intentions"
   "linter"
@@ -9,6 +10,7 @@ packages: [
   "minimap-plus"
   "package-sync"
   "scroll-through-time"
+  "underline-trailing-whitespace"
   "vim-mode-plus"
   "you-complete-me"
 ]
