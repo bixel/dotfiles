@@ -623,7 +623,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Regular 14</string>
+			<string>SourceCodePro-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -691,11 +691,9 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>DE72045B-5028-4445-BF65-726C0D3A4176</string>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<string>32EB61F4-A5FD-4DE4-8B1A-E9E3002C1B74</string>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>522771296.71139598</real>
+	<real>526553699.784343</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
