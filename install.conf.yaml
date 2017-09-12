@@ -31,3 +31,4 @@
         relink: true
         path: atom/
         create: true
+    ~/.gitignore_global: gitignore_global
