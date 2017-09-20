@@ -36,13 +36,15 @@ printable-code()
 
 # mount a remote's ($1) host dir ($2) at /MountPoint/$1
 mountremote () {
+  # set the root mount dir
+  mountroot="${3:-$HOME/mounts}";
   if [ -z "$2" ]; then
       mountpoint=$1-home
   else
       mountpoint=$1-`echo $2 | sed -E "s/\///g"`
   fi
-  mkdir -p /MountPoints/$mountpoint
-  sshfs $1:$2 "/MountPoints/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
+  mkdir -p $mountroot
+  sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
 }
 
 # use the symlinked ssh-auth-sock if available
