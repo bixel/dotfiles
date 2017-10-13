@@ -35,6 +35,14 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
+# Terminal
+#
+
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+
+#
 # Prompt
 #
 
