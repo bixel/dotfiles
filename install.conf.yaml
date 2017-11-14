@@ -3,6 +3,7 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - ["mkdir -p ~/.config/nvim/{backup,swap,undo}", Creating nvim backup dirs]
+    - [defaults write com.apple.loginwindow LoginHook osx_startup_script.sh, setup login hook to remap keys]
 
 - link:
     ~/.dotfiles: ''
