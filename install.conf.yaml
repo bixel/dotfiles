@@ -11,6 +11,7 @@
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
+    ~/.clang-format: clang-format
     ~/.config/flake8: flake8
     ~/.config/nvim/init.vim: nvimrc
     ~/.config/nvim/after/ftplugin:
