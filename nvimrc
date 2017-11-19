@@ -1,7 +1,7 @@
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -11,7 +11,6 @@ Plug 'mhinz/vim-startify'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'suan/vim-instant-markdown'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
@@ -35,6 +34,7 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Chiel92/vim-autoformat'
+Plug 'apple/swift', { 'rtp': 'utils/vim' }
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -191,16 +191,23 @@ let g:vimtex_latexmk_options=" -lualatex
                             \ -halt-on-error
                             \ -pvc"
 " let youcompleteme complete tex
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-      \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-      \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-      \ 're!\\hyperref\[[^]]*',
-      \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-      \ 're!\\(include(only)?|input){[^}]*',
-      \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-      \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-      \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-      \ ]
+" if !exists('g:ycm_semantic_triggers')
+"   let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers.tex = [
+"       \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+"       \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+"       \ 're!\\hyperref\[[^]]*',
+"       \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+"       \ 're!\\(include(only)?|input){[^}]*',
+"       \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+"       \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+"       \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+"       \ ]
+
+" use deoplete
+let g:deoplete#enable_at_startup = 1
+
+" vimtex settings
+let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
+set nocursorline  " speedup navigation tex documents further
