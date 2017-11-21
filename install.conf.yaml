@@ -3,12 +3,6 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - ["mkdir -p ~/.config/nvim/{backup,swap,undo}", Creating nvim backup dirs]
-    -
-      command: sudo defaults write com.apple.loginwindow LoginHook $PWD/osx_startup_script.sh && ./osx_startup_script.sh
-      description: setup login hook to remap keys
-      stderr: true
-      stout: true
-      stin: true
 
 - link:
     ~/.dotfiles: ''
@@ -32,7 +26,6 @@
     ~/.zprezto:
         relink: true
         path: external/prezto/
-    /usr/local/bin/syncIgnore: scripts/syncIgnore
     ~/.ssh/rc: sshrc
     ~/.atom:
         relink: true
