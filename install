@@ -3,7 +3,6 @@
 set -e
 
 CONFIG="install.conf.yaml"
-CONFIG_OSX="install_osx.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
@@ -14,6 +13,6 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}"
 
-if [[ "${@}" == "osx" ]]; then
-     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_OSX}"
+if [[ -n "${@}" ]]; then
+     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "install_${@}.conf.yaml"
 fi
