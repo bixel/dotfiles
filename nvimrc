@@ -2,7 +2,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
@@ -25,7 +27,6 @@ Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
@@ -110,15 +111,6 @@ set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
 set undodir=~/.config/nvim/undo//
 
-" YCM Configuration
-" dont use python-mode autocomplete obsolete now, because of YCM
-let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1, 'js': 1}
-" set ycm_extra_conf
-let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
-" turn off the ycm diagnostic because of struggling with root
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
 " NERDTree Configuration
 " hide some fileextenxions
 let NERDTreeIgnore = ['\.pyc$']
@@ -191,20 +183,6 @@ let g:vimtex_latexmk_options=" -lualatex
                             \ -interaction=nonstopmode
                             \ -halt-on-error
                             \ -pvc"
-" let youcompleteme complete tex
-" if !exists('g:ycm_semantic_triggers')
-"   let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers.tex = [
-"       \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-"       \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-"       \ 're!\\hyperref\[[^]]*',
-"       \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-"       \ 're!\\(include(only)?|input){[^}]*',
-"       \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-"       \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-"       \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-"       \ ]
 
 " use deoplete
 let g:deoplete#enable_at_startup = 1
