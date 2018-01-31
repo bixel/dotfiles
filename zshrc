@@ -34,7 +34,7 @@ printable-code()
   echo $doc | pandoc -o "$name.$oformat"
 }
 
-# mount a remote's ($1) host dir ($2) at /MountPoint/$1
+# mount a remote's ($1) host dir ($2) at $3/$2 or ~/mounts/$2 if $3 is not set
 mountremote () {
   # set the root mount dir
   mountroot="${3:-$HOME/mounts}";
@@ -45,6 +45,8 @@ mountremote () {
   fi
   mkdir -p $mountroot
   sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
+  unset mountroot
+  unset mountpoint
 }
 
 # use the symlinked ssh-auth-sock if available
