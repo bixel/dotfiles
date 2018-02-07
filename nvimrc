@@ -2,6 +2,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -190,23 +192,17 @@ let g:vimtex_latexmk_options=" -lualatex
                             \ -interaction=nonstopmode
                             \ -halt-on-error
                             \ -pvc"
-" let youcompleteme complete tex
-" if !exists('g:ycm_semantic_triggers')
-"   let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers.tex = [
-"       \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-"       \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-"       \ 're!\\hyperref\[[^]]*',
-"       \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-"       \ 're!\\(include(only)?|input){[^}]*',
-"       \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-"       \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-"       \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-"       \ ]
 
 " use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+let g:deoplete#sources#jedi#show_docstrnp = 1
+
+" deoplete clang completion
+let g:deoplete#sources#clang#clang_complete_database = '/net/nfshome/home/kheinicke/DevEnvironments/FTDevelopment/PHYS/PHYS_flavtagmaster/build.x86_64-centos7-gcc62-opt/'
+let g:deoplete#sources#clang#libclang_path = '/net/nfshome/home/kheinicke/.local/lib/libclang.so'
 
 " vimtex settings
 let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
