@@ -5,7 +5,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-clang'
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
@@ -26,7 +28,6 @@ Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
@@ -110,15 +111,6 @@ set ignorecase " ignore case while searching
 set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
 set undodir=~/.config/nvim/undo//
-
-" YCM Configuration
-" dont use python-mode autocomplete obsolete now, because of YCM
-let g:ycm_filetype_whitelist = {'cpp': 1, 'py': 1, 'python': 1, 'arduino': 1, 'js': 1}
-" set ycm_extra_conf
-let g:ycm_global_ycm_extra_conf = '~/.ycm.py'
-" turn off the ycm diagnostic because of struggling with root
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
 
 " NERDTree Configuration
 " hide some fileextenxions
