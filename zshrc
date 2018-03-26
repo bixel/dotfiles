@@ -43,7 +43,7 @@ mountremote () {
   else
       mountpoint=$1-`echo $2 | sed -E "s/\///g"`
   fi
-  mkdir -p $mountroot
+  mkdir -p $mountroot/$mountpoint
   sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
   unset mountroot
   unset mountpoint
