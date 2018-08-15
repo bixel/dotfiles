@@ -49,9 +49,20 @@ mountremote () {
   unset mountpoint
 }
 
-# use the symlinked ssh-auth-sock if available
-if [[ -f "$HOME/.ssh/ssh_auth_sock" ]]; then
-    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock;
+# use the symlinked ssh-auth-sock if inside tmux session otherwise update the
+# symlink
+# if [[ -f "$HOME/.ssh/ssh_auth_sock" ]]; then
+#     export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock;
+# fi
+
+# if we have a working socket, everything is fine
+if [[ -f "$SSH_AUT_SOCK" ]]; then
+    # if the socket is working, symlink it for other uses
+    if ssh-add -l; then
+        ln -sf $SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock;
+    fi
+elif [[ -f "$HOME/.ssh/ssh_auth_sock" ]]; then
+    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 fi
 
 # make the clipboard working on remote
