@@ -107,6 +107,10 @@ set breakindent "baby, yeah!
 set mouse=a " activate mouse support
 set ignorecase " ignore case while searching
 
+" autoformatting
+let g:formatter_python = ['yapf']
+let g:formatter_yapf_style = 'pep8'
+
 " handling backupfiles
 set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
@@ -158,6 +162,8 @@ autocmd FileType html,css,md EmmetInstall
 " configure flake8
 " bind `,f` to Flake8
 nnoremap <leader>f :call Flake8()<CR>
+let g:flake8_show_quickfix=1
+let g:flake8_show_in_gutter=1
 
 " instant markdown
 let g:instant_markdown_autostart = 0
