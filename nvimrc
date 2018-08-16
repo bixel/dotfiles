@@ -37,6 +37,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Chiel92/vim-autoformat'
 Plug 'apple/swift', { 'rtp': 'utils/vim' }
+Plug 'https://bitbucket.org/johanneskoester/snakemake.git', {'rtp': 'misc/vim/'}
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -198,3 +199,9 @@ let g:deoplete#sources#clang#libclang_path = '/net/nfshome/home/kheinicke/.local
 " vimtex settings
 let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
 set nocursorline  " speedup navigation tex documents further
+
+" Snakemake syntax
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *.rules set syntax=snakemake
+au BufNewFile,BufRead *.snakefile set syntax=snakemake
+au BufNewFile,BufRead *.snake set syntax=snakemake

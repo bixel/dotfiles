@@ -42,3 +42,5 @@ Thumbs.db
 env/
 tags
 __pycache__/
+.clang
+toolchain.cmake
