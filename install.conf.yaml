@@ -28,7 +28,6 @@
     ~/.zprezto:
         relink: true
         path: external/prezto/
-    ~/.ssh/rc: sshrc
     ~/.atom:
         relink: true
         path: atom/
