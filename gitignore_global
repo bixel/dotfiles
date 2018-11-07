@@ -44,3 +44,4 @@ tags
 __pycache__/
 .clang
 toolchain.cmake
+livepreview/
