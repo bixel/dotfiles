@@ -8,3 +8,4 @@
 
 - link:
     /usr/local/bin/syncIgnore: scripts/syncIgnore
+    ~/.latexmkrc: latexmkrc

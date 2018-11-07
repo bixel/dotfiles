@@ -185,10 +185,22 @@ set list
 
 " use latex flavour for plaintex files
 let g:tex_flavour="latex"
+
 " set some default options for my personal latexmk
 let g:vimtex_compiler_progname="nvr"
-let g:vimtex_view_general_viewer = 'open'
-let g:vimtex_view_general_options = '-a Skim'
+let g:vimtex_view_method = 'skim'
+" let g:vimtex_view_general_viewer = 'open'
+" let g:vimtex_view_general_options = '-a Skim'
+
+let g:vimtex_compiler_latexmk={
+    \ 'options' : [
+    \   '-lualatex',
+    \   '-silent',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \ 'build_dir' : 'livepreview',
+    \}
 
 " use deoplete
 let g:deoplete#enable_at_startup = 1

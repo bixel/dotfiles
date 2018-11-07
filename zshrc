@@ -19,7 +19,7 @@ fi
 # random string function
 random-string()
 {
-  LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
+  LC_ALL=C tr -dc A-Za-z0-9 < /dev/urandom | fold -w ${1:-32} | head -n 1
 }
 
 # make code printable with pandocs
@@ -48,22 +48,6 @@ mountremote () {
   unset mountroot
   unset mountpoint
 }
-
-# use the symlinked ssh-auth-sock if inside tmux session otherwise update the
-# symlink
-# if [[ -f "$HOME/.ssh/ssh_auth_sock" ]]; then
-#     export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock;
-# fi
-
-# if we have a working socket, everything is fine
-if [[ -f "$SSH_AUT_SOCK" ]]; then
-    # if the socket is working, symlink it for other uses
-    if ssh-add -l; then
-        ln -sf $SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock;
-    fi
-elif [[ -f "$HOME/.ssh/ssh_auth_sock" ]]; then
-    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
-fi
 
 # make the clipboard working on remote
 if [[ -n "$SSH_CLIENT" ]]; then
@@ -95,4 +79,18 @@ fi
 
 if [[ -n "$ITERM_INTEGRATION" && -f ~/.iterm2_shell_integration.zsh ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+
+# a new attempt to forward ssh sockets to tmux
+
+if [[ -n "$SSH_AUTH_SOCK" ]]; then
+    # based on/using http://stackoverflow.com/questions/21378569 and
+    # https://gist.github.com/martijnvermaat/8070533
+
+    # Fix SSH auth socket location so agent forwarding works with tmux
+    if [[ -z "$TMUX" ]] ; then
+        ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+    else
+        export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+    fi
 fi
