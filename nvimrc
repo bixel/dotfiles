@@ -38,6 +38,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'Chiel92/vim-autoformat'
 Plug 'apple/swift', { 'rtp': 'utils/vim' }
 Plug 'https://bitbucket.org/johanneskoester/snakemake.git', {'rtp': 'misc/vim/'}
+Plug 'junegunn/vim-easy-align'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -185,11 +186,9 @@ set list
 " use latex flavour for plaintex files
 let g:tex_flavour="latex"
 " set some default options for my personal latexmk
-let g:vimtex_latexmk_options=" -lualatex
-                            \ -jobname=./build/document
-                            \ -interaction=nonstopmode
-                            \ -halt-on-error
-                            \ -pvc"
+let g:vimtex_compiler_progname="nvr"
+let g:vimtex_view_general_viewer = 'open'
+let g:vimtex_view_general_options = '-a Skim'
 
 " use deoplete
 let g:deoplete#enable_at_startup = 1
