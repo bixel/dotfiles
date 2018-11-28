@@ -28,4 +28,5 @@
     ~/.zprezto:
         relink: true
         path: external/prezto/
+    ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
