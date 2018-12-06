@@ -39,6 +39,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'apple/swift', { 'rtp': 'utils/vim' }
 Plug 'https://bitbucket.org/johanneskoester/snakemake.git', {'rtp': 'misc/vim/'}
 Plug 'junegunn/vim-easy-align'
+Plug 'glench/vim-jinja2-syntax'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
