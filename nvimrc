@@ -63,8 +63,6 @@ map k gk
 
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
-set relativenumber  " aka :set rnu
-
 "map mapleader / to (german layout)
 let mapleader = ","
 
@@ -108,6 +106,7 @@ set colorcolumn=80 " Bar hinting for 80 chars
 set breakindent "baby, yeah!
 set mouse=a " activate mouse support
 set ignorecase " ignore case while searching
+set relativenumber  " aka :set rnu
 
 " autoformatting
 let g:formatter_python = ['yapf']
