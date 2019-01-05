@@ -215,7 +215,6 @@ let g:deoplete#sources#clang#libclang_path = '/net/nfshome/home/kheinicke/.local
 
 " vimtex settings
 let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
-set nocursorline  " speedup navigation tex documents further
 
 " Snakemake syntax
 au BufNewFile,BufRead Snakefile set syntax=snakemake
