@@ -16,6 +16,8 @@ fi
 
 ### U S E R  C O N F I G ###
 
+export PATH="$HOME/go/bin:$PATH"
+
 # random string function
 random-string()
 {
