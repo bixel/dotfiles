@@ -6,7 +6,7 @@
 	url = https://github.com/junegunn/vim-plug.git
 [submodule "external/prezto"]
 	path = external/prezto
-	url = git@github.com:bixel/prezto.git
+	url = git@github.com:sorin-ionescu/prezto.git
 [submodule "external/tpm"]
 	path = external/tpm
 	url = https://github.com/tmux-plugins/tpm.git

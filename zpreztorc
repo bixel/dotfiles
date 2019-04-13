@@ -18,9 +18,9 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'syntax-highlighting' \
   'prompt' \
   'git' \
-  'syntax-highlighting' \
   'history-substring-search' \
   'archive'
 
@@ -65,3 +65,9 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'pattern' \
   'cursor' \
   'root'
+
+declare -a X_ZSH_HIGHLIGHT_DIRS_BLACKLIST
+X_ZSH_HIGHLIGHT_DIRS_BLACKLIST=(
+    "/net"
+    "/eos"
+)
