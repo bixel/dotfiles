@@ -51,6 +51,22 @@ mountremote () {
   unset mountpoint
 }
 
+# check number of tmux sessions running on list of ssh hosts
+function tmux-num-sessions () {
+    if (( $# == 0 )) then;
+        echo usage: tmux-ssh-ls ssh-host-1 ssh-host 2 ...
+    fi
+    hosts=$@
+    for i; do
+        sessions=$(ssh $i tmux ls 2>/dev/null)
+        if (( $? )) then;
+            echo $i: No sessions
+        else
+            echo $i: $(echo $sessions | wc -l) sessions
+        fi
+    done
+}
+
 # make the clipboard working on remote
 if [[ -n "$SSH_CLIENT" ]]; then
   SSH_IP=$(echo $SSH_CLIENT | awk '{print $1}')
