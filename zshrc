@@ -16,6 +16,20 @@ fi
 
 ### U S E R  C O N F I G ###
 
+# Override agnosters prompt_dir
+# Using prompt_sorin's abbreviation
+prompt_dir() {
+  local pwd="${PWD/#$HOME/~}"
+
+  if [[ "$pwd" == (#m)[/~] ]]; then
+    prompt="$MATCH"
+    unset MATCH
+  else
+    prompt="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+  fi
+  prompt_segment blue $PRIMARY_FG " $prompt "
+}
+
 export PATH="$HOME/go/bin:$PATH"
 
 # random string function
