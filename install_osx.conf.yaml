@@ -9,3 +9,4 @@
 - link:
     /usr/local/bin/syncIgnore: scripts/syncIgnore
     ~/.latexmkrc: latexmkrc
+    ~/Library/Application Support/iTerm2/DynamicProfiles/iterm-profiles.json: iterm-profiles.json
