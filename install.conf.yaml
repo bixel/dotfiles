@@ -32,3 +32,4 @@
         relink: true
         path: external/prezto/
     ~/.gitignore_global: gitignore_global
+    ~/.taskrc: taskrc
