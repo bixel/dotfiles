@@ -68,7 +68,7 @@ mountremote () {
 # check number of tmux sessions running on list of ssh hosts
 function tmux-num-sessions () {
     if (( $# == 0 )) then;
-        echo usage: tmux-ssh-ls ssh-host-1 ssh-host 2 ...
+        echo usage: tmux-num-sessions ssh-host-1 ssh-host-2 ...
     fi
     hosts=$@
     for i; do
@@ -126,3 +126,12 @@ if [[ -n "$SSH_AUTH_SOCK" ]]; then
         export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
     fi
 fi
+
+# taskwarrior setup, stolen from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/taskwarrior/taskwarrior.plugin.zsh
+zstyle ':completion:*:*:task:*' verbose yes
+zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
+
+zstyle ':completion:*:*:task:*' group-name ''
+
+alias t=task
+compdef _task t=task
