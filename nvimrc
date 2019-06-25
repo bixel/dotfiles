@@ -80,8 +80,8 @@ map <C-n> :NERDTreeToggle<CR>
 " open Tagbar with CTRL+m
 map <C-m> :TagbarToggle<CR>
 
-" toggle background with CTRL+I
-map <C-I> :let &background = (&background == "dark" ? "light" : "dark")<CR>
+" toggle background with ,i
+nnoremap <leader>i :let &background = (&background == "dark" ? "light" : "dark")<CR>
 
 " :w for :W
 command W w
