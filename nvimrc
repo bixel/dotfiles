@@ -208,7 +208,7 @@ let g:deoplete#enable_at_startup = 1
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-let g:deoplete#sources#jedi#show_docstrnp = 1
+let g:deoplete#sources#jedi#show_docstring = 1
 
 " deoplete clang completion
 let g:deoplete#sources#clang#clang_complete_database = '/net/nfshome/home/kheinicke/DevEnvironments/FTDevelopment/PHYS/PHYS_flavtagmaster/build.x86_64-centos7-gcc62-opt/'
