@@ -30,6 +30,30 @@ prompt_dir() {
   prompt_segment blue $PRIMARY_FG " $prompt "
 }
 
+# Display current virtual environment
+# edit: also fro conda environments
+prompt_virtualenv() {
+  if [[ -n $VIRTUAL_ENV ]]; then
+    color=cyan
+    prompt_segment $color $PRIMARY_FG
+    print -Pn " $(basename $VIRTUAL_ENV) "
+  elif [[ -n $CONDA_DEFAULT_ENV ]]; then
+    color=cyan
+    prompt_segment $color $PRIMARY_FG
+    print -Pn " $(basename $CONDA_DEFAULT_ENV) "
+  fi
+}
+
+# adjust %m to $HOSTNAME to prevent annoying conda stuff
+export HOSTNAME_S=$(hostname -s)
+prompt_context() {
+  local user=`whoami`
+
+  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
+    prompt_segment $PRIMARY_FG default " %(!.%{%F{yellow}%}.)$user@$HOSTNAME_S "
+  fi
+}
+
 export PATH="$HOME/go/bin:$PATH"
 
 # random string function
