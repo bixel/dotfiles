@@ -105,6 +105,11 @@ function tmux-num-sessions () {
     done
 }
 
+# help creating links to emails
+function murl () {
+    echo message://"%3c"$@"%3e"
+}
+
 # make the clipboard working on remote
 if [[ -n "$SSH_CLIENT" ]]; then
   SSH_IP=$(echo $SSH_CLIENT | awk '{print $1}')
