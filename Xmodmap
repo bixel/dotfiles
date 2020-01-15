@@ -2,3 +2,6 @@ clear lock
 keycode   9 = Caps_Lock NoSymbol Caps_Lock NoSymbol Caps_Lock
 keycode  66 = Escape NoSymbol Escape NoSymbol Escape
 add lock = Caps_Lock
+keycode  30 = u U u U U00FC U00DC
+keycode  32 = o O o O U00F6 U00D6 oslash Oslash
+keycode  38 = a A a A U00E4 U00C4
