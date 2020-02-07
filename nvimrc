@@ -29,14 +29,15 @@ Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javacript' }
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Chiel92/vim-autoformat'
-Plug 'apple/swift', { 'rtp': 'utils/vim' }
+" Plug 'apple/swift', { 'rtp': 'utils/vim', 'for': 'swift', 'frozen': 'true' }
+Plug 'keith/swift.vim'
 Plug 'https://bitbucket.org/johanneskoester/snakemake.git', {'rtp': 'misc/vim/'}
 Plug 'junegunn/vim-easy-align'
 Plug 'glench/vim-jinja2-syntax'
@@ -106,8 +107,11 @@ set expandtab " use 'tabstop' spaces instead of tab
 set colorcolumn=80 " Bar hinting for 80 chars
 set breakindent "baby, yeah!
 set mouse=a " activate mouse support
-set ignorecase " ignore case while searching
 set relativenumber  " aka :set rnu
+
+" searching
+set ignorecase " ignore case while searching
+nnoremap <C-s> :set hlsearch!<CR>
 
 " autoformatting
 let g:formatter_python = ['yapf']
@@ -205,13 +209,15 @@ let g:vimtex_compiler_latexmk={
 
 " use deoplete
 let g:deoplete#enable_at_startup = 1
-
+" close preview window after completion or on leave https://github.com/Shougo/deoplete.nvim/issues/115
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
 " deoplete clang completion
 let g:deoplete#sources#clang#clang_complete_database = '/net/nfshome/home/kheinicke/DevEnvironments/FTDevelopment/PHYS/PHYS_flavtagmaster/build.x86_64-centos7-gcc62-opt/'
 let g:deoplete#sources#clang#libclang_path = '/net/nfshome/home/kheinicke/.local/lib/libclang.so'
+" show docstring in preview window
+let g:deoplete#sources#jedi#show_docstring = 1
 
 " vimtex settings
 let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
