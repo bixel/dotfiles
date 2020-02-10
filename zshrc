@@ -84,7 +84,12 @@ mountremote () {
       mountpoint=$1-`echo $2 | sed -E "s/\///g"`
   fi
   mkdir -p $mountroot/$mountpoint
-  sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
+  if [[ $(uname -a) == *"Darwin"* ]]; then
+      # following line is apple-specific
+      sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
+  else
+      sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,no_readahead
+  fi
   unset mountroot
   unset mountpoint
 }
@@ -103,6 +108,11 @@ function tmux-num-sessions () {
             echo $i: $(echo $sessions | wc -l) sessions
         fi
     done
+}
+
+# help creating links to emails
+function murl () {
+    echo message://"%3c"$@"%3e"
 }
 
 # make the clipboard working on remote
