@@ -233,4 +233,7 @@ let g:go_fmt_command = "goimports"
 " only for the e5 interactive machines
 let g:go_version_warning = 0
 
+" easy align
+vmap <Enter> <Plug>(EasyAlign)
+
 source $HOME/.config/nvim/local.vimrc
