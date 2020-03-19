@@ -1,0 +1,28 @@
+#set username for zshrc
+DEFAULT_USER="kheinicke"
+
+[[ ":$PATH:" != *":${HOME}/.local/bin:"* ]] && PATH="${HOME}/.local/bin:${PATH}"
+export EDITOR=nvim
+export KRB5CCNAME=$HOME/.krb5cc
+
+alias set_conda="source /usr/scripts/set_conda.sh && source ~/.set_conda_local"
+alias rf="set_conda && conda activate root_forge"
+alias ipy="set_conda && conda activate root_forge_36 && ipython"
+
+export CONDOR_LOGS=/ceph/users/kheinicke/condor_logs
+export D=/ceph/users/kheinicke/b2oc/dsk-run2
+
+function batchmake () {
+    mkdir -p $CONDOR_LOGS/{stderr,log,stdout}
+    snakemake --cores 10000 --local-cores 64 --latency-wait 1 \
+        --max-jobs-per-second 32 --max-status-checks-per-second 512 \
+        --drmaa \
+" getenv = True "$'\n'\
+" request_cpus = {threads}"$'\n'\
+" output = $CONDOR_LOGS/stdout/{rule}.{wildcards}.out"$'\n'\
+" error = $CONDOR_LOGS/stderr/{rule}.{wildcards}.err"$'\n'\
+" logs = $CONDOR_LOGS/log/{rule}.{wildcards}.log "$'\n'\
+" request_memory = 8G "$'\n'\
+" +MaxRunHours = ${MAXRUNHOURS:-24} " \
+${*} | sed "s/DEBUG: Sleeping for a moment/./g"
+}
