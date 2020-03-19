@@ -1,0 +1,9 @@
+#set username for zshrc
+DEFAULT_USER="bixel"
+
+export GOPATH=~/.go
+export PATH=/usr/local/texlive/2019/bin/x86_64-darwin:$GOPATH/bin:/usr/local/opt/python@3.8/libexec/bin:$PATH
+
+export P=~/Nextcloud/Studium/2016.3\ Promotion
+
+source /opt/root/bin/thisroot.sh
