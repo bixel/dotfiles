@@ -10,7 +10,6 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.zpreztorc: zpreztorc
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
@@ -28,8 +27,5 @@
         create: true
         relink: true
         path: external/vim-plug/plug.vim
-    ~/.zprezto:
-        relink: true
-        path: external/prezto/
     ~/.gitignore_global: gitignore_global
     ~/.taskrc: taskrc
