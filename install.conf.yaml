@@ -29,3 +29,4 @@
         path: external/vim-plug/plug.vim
     ~/.gitignore_global: gitignore_global
     ~/.taskrc: taskrc
+    ~/.p10k.zsh: p10k.zsh
