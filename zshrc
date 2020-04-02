@@ -2,59 +2,38 @@
 # source local config first to overwrite default theme if wanted
 source ~/.zsh_local
 
-# start tmux in a nice way, if available
-t () {
-  if command -v tmux>/dev/null; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new-session -A -s main
-  fi
-}
+# activate plugin manager
+source ~/.zplug/init.zsh
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "romkatv/powerlevel10k", as:theme, use:"*10k.zsh-theme", depth:1
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "junegunn/fzf", use:"shell/*.zsh"
+zplug "modules/git", from:prezto
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
 ### U S E R  C O N F I G ###
 
-# Override agnosters prompt_dir
-# Using prompt_sorin's abbreviation
-prompt_dir() {
-  local pwd="${PWD/#$HOME/~}"
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 
-  if [[ "$pwd" == (#m)[/~] ]]; then
-    prompt="$MATCH"
-    unset MATCH
-  else
-    prompt="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
-  fi
-  prompt_segment blue $PRIMARY_FG " $prompt "
-}
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
 
-# Display current virtual environment
-# edit: also fro conda environments
-prompt_virtualenv() {
-  if [[ -n $VIRTUAL_ENV ]]; then
-    color=cyan
-    prompt_segment $color $PRIMARY_FG
-    print -Pn " $(basename $VIRTUAL_ENV) "
-  elif [[ -n $CONDA_DEFAULT_ENV ]]; then
-    color=cyan
-    prompt_segment $color $PRIMARY_FG
-    print -Pn " $(basename $CONDA_DEFAULT_ENV) "
-  fi
-}
-
-# adjust %m to $HOSTNAME to prevent annoying conda stuff
-export HOSTNAME_S=$(hostname -s)
-prompt_context() {
-  local user=`whoami`
-
-  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
-    prompt_segment $PRIMARY_FG default " %(!.%{%F{yellow}%}.)$user@$HOSTNAME_S "
-  fi
-}
-
-export PATH="$HOME/go/bin:$PATH"
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
 # random string function
 random-string()
@@ -169,3 +148,8 @@ zstyle ':completion:*:*:task:*' group-name ''
 
 alias t=task
 compdef _task t=task
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+zplug load
