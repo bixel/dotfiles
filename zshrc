@@ -90,6 +90,7 @@ function tmux-num-sessions () {
 }
 
 # help creating links to emails
+# in apple mail, go to viewing → Show message headers → Custom... → Add "Message-ID"
 function murl () {
     echo message://"%3c"$@"%3e"
 }
@@ -143,7 +144,6 @@ fi
 # taskwarrior setup, stolen from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/taskwarrior/taskwarrior.plugin.zsh
 zstyle ':completion:*:*:task:*' verbose yes
 zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
-
 zstyle ':completion:*:*:task:*' group-name ''
 
 alias t=task
