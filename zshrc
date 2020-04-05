@@ -3,7 +3,8 @@
 source ~/.zsh_local
 
 # activate plugin manager
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=$HOME/.dotfiles/external/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "romkatv/powerlevel10k", as:theme, use:"*10k.zsh-theme", depth:1
