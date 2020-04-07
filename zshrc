@@ -20,10 +20,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# use up and down keys for substring search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 ### U S E R  C O N F I G ###
 
 zmodload zsh/complist
@@ -159,3 +155,7 @@ compdef _task t=task
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 zplug load
+
+# use up and down keys for substring search (needs to be called after plugin loading)
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
