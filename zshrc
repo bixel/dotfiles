@@ -20,8 +20,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load
-
 # use up and down keys for substring search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -159,3 +157,5 @@ compdef _task t=task
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+zplug load
