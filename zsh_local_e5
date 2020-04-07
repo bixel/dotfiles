@@ -4,6 +4,8 @@ DEFAULT_USER="kheinicke"
 [[ ":$PATH:" != *":${HOME}/.local/bin:"* ]] && PATH="${HOME}/.local/bin:${PATH}"
 export EDITOR=nvim
 export KRB5CCNAME=$HOME/.krb5cc
+export LIBCLANG_PATH=/cvmfs/sft.cern.ch/lcg/releases/clang/8.0.0-ed577/x86_64-centos7/lib/libclang.so
+export CLANG_HEADER=/cvmfs/sft.cern.ch/lcg/releases/clang/8.0.0-ed577/x86_64-centos7/lib/clang/8.0.0/include/
 
 alias set_conda="source /usr/scripts/set_conda.sh && source ~/.set_conda_local"
 alias rf="set_conda && conda activate root_forge"

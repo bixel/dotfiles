@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-" Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-clang'
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree'
@@ -16,9 +16,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'suan/vim-instant-markdown'
-Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
-Plug 'KabbAmine/vCoolor.vim'
 Plug 'nvie/vim-flake8'
 Plug 'SirVer/ultisnips'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -27,7 +25,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript', { 'for': 'javacript' }
 Plug 'easymotion/vim-easymotion'
@@ -36,12 +33,13 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Chiel92/vim-autoformat'
-" Plug 'apple/swift', { 'rtp': 'utils/vim', 'for': 'swift', 'frozen': 'true' }
 Plug 'keith/swift.vim'
 Plug 'https://bitbucket.org/johanneskoester/snakemake.git', {'rtp': 'misc/vim/'}
 Plug 'junegunn/vim-easy-align'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'fatih/vim-go'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -214,8 +212,9 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " deoplete clang completion
-let g:deoplete#sources#clang#clang_complete_database = '/net/nfshome/home/kheinicke/DevEnvironments/FTDevelopment/PHYS/PHYS_flavtagmaster/build.x86_64-centos7-gcc62-opt/'
-let g:deoplete#sources#clang#libclang_path = '/net/nfshome/home/kheinicke/.local/lib/libclang.so'
+let g:deoplete#sources#clang#clang_complete_database = expand("$COMPLETION_DATABASE")
+let g:deoplete#sources#clang#libclang_path = expand("$LIBCLANG_PATH")
+let g:deoplete#sources#clang#clang_header = expand("$CLANG_HEADER")
 " show docstring in preview window
 let g:deoplete#sources#jedi#show_docstring = 1
 
