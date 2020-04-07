@@ -6,9 +6,9 @@ source ~/.zsh_local
 export ZPLUG_HOME=$HOME/.dotfiles/external/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-history-substring-search"
 zplug "romkatv/powerlevel10k", as:theme, use:"*10k.zsh-theme", depth:1
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "junegunn/fzf", use:"shell/*.zsh"
 zplug "modules/git", from:prezto
 
@@ -20,10 +20,17 @@ if ! zplug check --verbose; then
     fi
 fi
 
+zplug load
+
+# use up and down keys for substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 ### U S E R  C O N F I G ###
 
-zstyle ':completion:*' menu select
 zmodload zsh/complist
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
 
 # vi mode
 bindkey -v
@@ -152,5 +159,3 @@ compdef _task t=task
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-zplug load
