@@ -1,22 +1,14 @@
-#
-# Editors
-#
-
+# setup editors/viewers
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-#
-# Language
-#
+# let zsh find the history
+export HISTFILE=$HOME/.zhistory
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
-
-#
-# Paths
-#
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
@@ -27,10 +19,6 @@ path=(
   $HOME/go/bin
   $path
 )
-
-#
-# Less
-#
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).

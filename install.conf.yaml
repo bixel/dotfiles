@@ -10,7 +10,7 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.zprofile: zprofile
+    ~/.zlogin: zlogin
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.clang-format: clang-format
