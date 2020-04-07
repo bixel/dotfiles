@@ -3,6 +3,8 @@ DEFAULT_USER="bixel"
 
 export GOPATH=~/.go
 export PATH=/usr/local/texlive/2019/bin/x86_64-darwin:$GOPATH/bin:/usr/local/opt/python@3.8/libexec/bin:$PATH
+export LIBCLANG_PATH=/Library/Developer/CommandLineTools/usr/lib/libclang.dylib
+export CLANG_HEADER=/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include
 
 export P=~/Nextcloud/Studium/2016.3\ Promotion
 
