@@ -5,6 +5,7 @@ export PAGER='less'
 
 # let zsh find the history
 export HISTFILE=$HOME/.zhistory
+export HISTSIZE=20000
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
