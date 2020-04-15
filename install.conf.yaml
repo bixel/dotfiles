@@ -4,8 +4,6 @@
     - [git submodule update --init --recursive, Installing submodules]
     - ["mkdir -p ~/.config/nvim/{backup,swap,undo}", Creating nvim backup dirs]
     - ["touch ~/.config/nvim/local.vimrc", Touching local vimrc]
-    - ["git config --global user.email kevin@kehei.de"]
-    - ["git config --global user.name Kevin\ Heinicke"]
     - ["git config --global core.excludesfile ~/.gitignore_global"]
 
 - link:
