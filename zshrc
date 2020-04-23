@@ -11,6 +11,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "junegunn/fzf", use:"shell/*.zsh"
 zplug "modules/git", from:prezto
+zplug "modules/completion", from:prezto
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -24,7 +25,6 @@ fi
 
 zmodload zsh/complist
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
 
 # vi mode
 bindkey -v
