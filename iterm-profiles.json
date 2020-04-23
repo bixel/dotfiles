@@ -381,6 +381,7 @@
               "Blue Component" : 0,
               "Green Component" : 0.53725490196078429
             },
+            "Set Local Environment Vars" : false,
             "Right Option Key Sends" : 0
         }
     ]

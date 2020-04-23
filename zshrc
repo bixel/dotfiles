@@ -58,8 +58,10 @@ printable-code()
 # mount a remote's ($1) host dir ($2) at $3/$2 or ~/mounts/$2 if $3 is not set
 mountremote () {
   # set the root mount dir
-  mountroot="${3:-$HOME/mounts}";
-  if [ -z "$2" ]; then
+  mountroot="${REMOTE_MOUNT_ROOT:-$HOME/mounts}";
+  if [ -n "$3" ]; then
+      mountpoint=$3
+  elif [ -z "$2" ]; then
       mountpoint=$1-home
   else
       mountpoint=$1-`echo $2 | sed -E "s/\///g"`
