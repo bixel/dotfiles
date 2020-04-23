@@ -7,6 +7,9 @@ export PAGER='less'
 export HISTFILE=$HOME/.zhistory
 export HISTSIZE=20000
 
+# use less threads to populate git status
+export GITSTATUS_NUM_THREADS=2
+
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
