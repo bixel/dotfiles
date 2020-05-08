@@ -3,9 +3,12 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-# let zsh find the history
+# let zsh find the history, see `man zshoptions`
 export HISTFILE=$HOME/.zhistory
+export SAVEHIST=3000
 export HISTSIZE=20000
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt SHARE_HISTORY
 
 # use less threads to populate git status
 export GITSTATUS_NUM_THREADS=2
