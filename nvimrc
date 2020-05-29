@@ -27,7 +27,7 @@ Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript', { 'for': 'javacript' }
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
@@ -81,6 +81,10 @@ map <C-m> :TagbarToggle<CR>
 
 " toggle background with ,i
 nnoremap <leader>i :let &background = (&background == "dark" ? "light" : "dark")<CR>
+
+" Open fzf file list
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <Leader>b  :Buffers<CR>
 
 " :w for :W
 command W w

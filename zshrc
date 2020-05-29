@@ -12,6 +12,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "junegunn/fzf", use:"shell/*.zsh"
 zplug "modules/git", from:prezto
 zplug "modules/completion", from:prezto
+zplug "esc/conda-zsh-completion"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

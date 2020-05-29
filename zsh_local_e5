@@ -7,6 +7,8 @@ export KRB5CCNAME=$HOME/.krb5cc
 export LIBCLANG_PATH=/cvmfs/sft.cern.ch/lcg/releases/clang/8.0.0-ed577/x86_64-centos7/lib/libclang.so
 export CLANG_HEADER=/cvmfs/sft.cern.ch/lcg/releases/clang/8.0.0-ed577/x86_64-centos7/lib/clang/8.0.0/include/
 export D=/ceph/users/kheinicke/b2oc/dsk-run2
+export B=/ceph/users/kheinicke/Urania/PhysFit/B2DXFitters/
+export BC=/ceph/users/kheinicke/Urania/PhysFit/B2DXFitters/data/Bs2DsK_Run2CPV/Bs2DsPi/Toys/
 
 alias upy="/ceph/users/kheinicke/Urania/build.x86_64-centos7-gcc9-opt/run python"
 alias set_conda="source /usr/scripts/set_conda.sh && source ~/.set_conda_local"
