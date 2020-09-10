@@ -11,4 +11,4 @@ export LC_CTYPE=en_US.UTF-8
 
 export P=~/Nextcloud/Studium/2016.3\ Promotion
 
-source /opt/root/bin/thisroot.sh
+source /opt/root622/bin/thisroot.sh

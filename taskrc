@@ -32,3 +32,5 @@ search.case.sensitive=no
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-light-256.theme
 include ~/.dotfiles/task.theme
 
+context.focus=(project:bs2dsk or project:thesis) -ideas
+context=focus
