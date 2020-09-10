@@ -1,0 +1,44 @@
+# start off with a main function
+snippet main
+def main():
+	${1}
+
+if __name__ == '__main__':
+	main()
+endsnippet
+
+snippet parse_args
+def parse_args():
+	import argparse
+
+	parser = argparse.ArgumentParser()
+	parser.add_argument('${1}')
+
+	return parser.parse_args()
+endsnippet
+
+
+# get a script with arguments started
+snippet argmain
+import argparse
+
+
+def parse_args():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('${1}', ${2})
+	return parser.parse_args()
+
+
+def main():
+	args = parse_args()
+
+
+if __name__ == '__main__':
+	main()
+endsnippet
+
+
+# insert olsdcool breakpoint
+snippet br
+import pdb; pdb.set_trace()
+endsnippet
