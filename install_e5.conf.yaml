@@ -1,2 +1,5 @@
+- defaults:
+    link:
+      relink: true
 - link:
     ~/.zsh_local: zsh_local_e5
