@@ -29,3 +29,4 @@
     ~/.gitignore_global: gitignore_global
     ~/.taskrc: taskrc
     ~/.p10k.zsh: p10k.zsh
+    ~/.local/bin/trash: scripts/trash
