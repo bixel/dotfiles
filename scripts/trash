@@ -10,6 +10,7 @@ import sys
 import os
 import json
 from datetime import datetime
+from subprocess import check_output
 
 DEFAULT_CONFIG = {
     'trashes': [
@@ -51,6 +52,27 @@ def get_trashes(config):
     return trashes
 
 
+def write_meta(original_dir, trash_timestamp_dir, calc_size=False):
+    if calc_size:
+        size = check_output(['du', '-sh', original_dir]).split()[0].decode('utf8')
+    else:
+        size = '?'
+    with open(trash_timestamp_dir / '.trash_meta', 'w') as f:
+        f.writelines([l + '\n' for l in [str(original_dir), size]])
+
+
+def read_meta(meta_file: Path) -> tuple:
+    with open(meta_file) as f:
+        try:
+            trashed_dir, size = f.readlines()
+            trashed_dir = trashed_dir.strip()
+            size = size.strip()
+        except ValueError:
+            logging.info(f'Meta information at {meta_file} outdated or corrupt')
+            trashed_dir = size = None
+    return trashed_dir, size
+
+
 def trash(names, config, dry_run=False):
     for name in names:
         name = Path(os.path.expandvars(name))
@@ -65,12 +87,13 @@ def trash(names, config, dry_run=False):
         for trashdir in get_trashes(config):
             try:
                 if lowest_mount(trashdir) == lowest_mount(name):
-                    newname = (trashdir / datetime.now().isoformat(
-                        timespec='seconds').replace(':', '_') /
-                               '/'.join(name.parts[1:]))
+                    timestamp_prefix = trashdir / datetime.now().isoformat(
+                        timespec='seconds').replace(':', '_')
+                    newname = timestamp_prefix / '/'.join(name.parts[1:])
                     newname.parent.mkdir(parents=True, exist_ok=True)
                     logging.debug(f'Will move {name} to {newname}')
                     if not dry_run:
+                        write_meta(name, timestamp_prefix)
                         name.rename(newname)
                     trashed = True
                     break
@@ -81,19 +104,28 @@ def trash(names, config, dry_run=False):
             logging.warning(f'Unable to trash {name}')
 
 
-def trashed_sort_key(trashed_path: Path) -> int:
+def extract_timestamp(trashed_path: Path) -> datetime:
     # length of the used ISO format is 19!
     date_string = trashed_path.parts[-1][-19:].replace('_', ':')
     logging.debug(f'Extracted {date_string} from {trashed_path}')
-    return datetime.fromisoformat(date_string).timestamp()
+    return datetime.fromisoformat(date_string)
 
 
-def list_trashed(config):
+def trashed_sort_key(trashed_path: Path) -> int:
+    return extract_timestamp(trashed_path).timestamp()
+
+
+def list_trashed(config) -> str:
     """ Yield trashed entries for trashdirs of given config
     """
     for trashdir in get_trashes(config):
         for entry in sorted(trashdir.iterdir(), key=trashed_sort_key):
-            yield entry
+            meta_file = entry / '.trash_meta'
+            if meta_file.is_file():
+                trashed_dir, size = read_meta(meta_file)
+                yield f'{trashed_dir or entry} ({extract_timestamp(entry)}, {size})'
+            else:
+                yield entry
 
 
 def main():
