@@ -10,5 +10,6 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
 export P=~/Nextcloud/Studium/2016.3\ Promotion
+export D=~/mounts/ceph/b2oc/dsk-run2/
 
-source /opt/root622/bin/thisroot.sh
+eval "$(pyenv init -)"
