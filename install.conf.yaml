@@ -26,7 +26,10 @@
         create: true
         relink: true
         path: external/vim-plug/plug.vim
+    ~/.config/coc/extensions/package.json: coc-extensions.json
     ~/.gitignore_global: gitignore_global
     ~/.taskrc: taskrc
     ~/.p10k.zsh: p10k.zsh
-    ~/.local/bin/trash: scripts/trash
+    ~/.local/bin/trash:
+        create: true
+        path: scripts/trash

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "coc-json": ">=1.3.2",
+    "coc-pyright": ">=1.1.91",
+    "coc-vimtex": ">=1.0.4",
+    "coc-yaml": ">=1.1.3"
+  }
+}
