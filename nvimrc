@@ -82,6 +82,7 @@ nnoremap <leader>i :let &background = (&background == "dark" ? "light" : "dark")
 " Open fzf file list
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nnoremap <silent> <Leader>b  :Buffers<CR>
+nnoremap <silent> <Leader>t  :Tags<CR>
 
 " :w for :W
 command W w
@@ -202,16 +203,14 @@ let g:vimtex_compiler_latexmk={
     \   '-silent',
     \   '-synctex=1',
     \   '-interaction=nonstopmode',
+    \   '-shell-escape',
     \ ],
     \ 'build_dir' : 'livepreview',
     \}
-let g:vimtex_quickfix_latexlog = {
-    \ 'overfull': 0,
-    \ 'underfull': 0,
-    \ 'packages': {
-    \   'default': 0,
-    \  },
-    \ }
+let g:vimtex_quickfix_ignore_filters = [
+    \ 'Marginpar on page',
+    \]
+let g:vimtex_quickfix_autoclose_after_keystrokes = 5
 
 "
 " coc.nvim
