@@ -31,7 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Chiel92/vim-autoformat'
 Plug 'keith/swift.vim'
-Plug 'https://bitbucket.org/johanneskoester/snakemake.git', {'rtp': 'misc/vim/'}
+Plug 'snakemake/snakemake', {'rtp': 'misc/vim/'}
 Plug 'junegunn/vim-easy-align'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'fatih/vim-go'
