@@ -6,8 +6,9 @@ export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
 export LIBCLANG_PATH=/Library/Developer/CommandLineTools/usr/lib/libclang.dylib
 export CLANG_HEADER=/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include
 # pyenv fix for Big Sur, see https://github.com/pyenv/pyenv/issues/1746#issuecomment-739535209
-export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
-export CPPFLAGS="-I$(brew --prefix zlib)/include -I$(brew --prefix bzip2)/include"
+# hardcoding brew --prefix zlib/bzip2 for speed
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8

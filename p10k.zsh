@@ -71,19 +71,19 @@
     phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
     haskell_stack           # haskell version from stack (https://haskellstack.org/)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
-    terraform               # terraform workspace (https://www.terraform.io)
-    aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-    aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
-    azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
-    gcloud                  # google cloud cli account and project (https://cloud.google.com/)
-    google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
+    # terraform               # terraform workspace (https://www.terraform.io)
+    # aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+    # aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
+    # azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
+    # gcloud                  # google cloud cli account and project (https://cloud.google.com/)
+    # google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     context                 # user@hostname
-    nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
-    ranger                  # ranger shell (https://github.com/ranger/ranger)
-    nnn                     # nnn shell (https://github.com/jarun/nnn)
+    # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
+    # ranger                  # ranger shell (https://github.com/ranger/ranger)
+    # nnn                     # nnn shell (https://github.com/jarun/nnn)
     vim_shell               # vim shell indicator (:sh)
-    midnight_commander      # midnight commander shell (https://midnight-commander.org/)
-    nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
+    # midnight_commander      # midnight commander shell (https://midnight-commander.org/)
+    # nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
     # load                  # CPU load
@@ -91,8 +91,8 @@
     # ram                   # free RAM
     # swap                  # used swap
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
-    timewarrior             # timewarrior tracking status (https://timewarrior.net/)
-    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
+    # timewarrior             # timewarrior tracking status (https://timewarrior.net/)
+    # taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     # time                  # current time
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
