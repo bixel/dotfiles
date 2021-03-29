@@ -33,4 +33,3 @@ search.case.sensitive=no
 include ~/.dotfiles/task.theme
 
 context.focus=(project:bs2dsk or project:thesis) -ideas
-context=focus
