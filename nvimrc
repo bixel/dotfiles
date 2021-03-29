@@ -2,7 +2,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -72,9 +71,6 @@ nnoremap <leader>o :!open build/*.pdf<CR>
 
 " open Nerdtree with CTRL+n
 map <C-n> :NERDTreeToggle<CR>
-
-" open Tagbar with CTRL+m
-map <C-m> :TagbarToggle<CR>
 
 " toggle background with ,i
 nnoremap <leader>i :let &background = (&background == "dark" ? "light" : "dark")<CR>
@@ -156,6 +152,7 @@ let g:javascript_enable_domhtmlcss = 1
 
 " limelight+goyo settings, automatically fire up limelight with goyo
 let g:limelight_conceal_ctermfg = 'gray'
+let g:goyo_width = 85
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " map `,g` to start goyo
