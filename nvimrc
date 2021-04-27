@@ -147,6 +147,11 @@ let g:vcool_ins_rgb_map = ''  " Insert rgb color.
 let g:vcool_ins_hsl_map = ''  " Insert hsl color.
 let g:vcool_ins_rgba_map = ''  " Insert rgba color.
 
+" startify
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1
+let g:startify_fortune_use_unicode = 1
+
 " vim-javascript config
 let g:javascript_enable_domhtmlcss = 1
 
