@@ -18,6 +18,11 @@ The changes take effect after a logout.
 *Warning* If you want to present a slideshow with these settings enabled,
 you'll have a nightmate using most presenters.
 
+Remap ESC and CAPSLOCK keys
+```
+sudo defaults read com.apple.loginwindow || sudo defaults write com.apple.loginwindow LoginHook $PWD/osx_startup_script.sh && sudo ./osx_startup_script.sh
+```
+
 ## Oddities
 
 To properly activate autocompletion, I need to run

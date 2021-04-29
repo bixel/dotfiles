@@ -51,6 +51,16 @@ snippet img
 \end{figure}
 endsnippet
 
+# Wrapimage
+snippet wrap
+\begin{wrapfigure}{o}${3:[4cm]}{${2:0.3\linewidth}}
+	\centering
+	\includegraphics[width=$2]{${1:example-image-a}}
+	\caption{${4}}
+	\label{fig:${5}}
+\end{wrapfigure}
+endsnippet
+
 # PGF-Image
 snippet pgf
 \begin{figure}
@@ -178,11 +188,6 @@ endsnippet
 snippet item
 \item ${1}
 item
-endsnippet
-
-# electronvolt per c squared
-snippet evc
-\electronvolt \per \clight \squared
 endsnippet
 
 # siunitx maaan

@@ -1,10 +1,7 @@
 - shell:
     -
-      command: sudo defaults read com.apple.loginwindow || sudo defaults write com.apple.loginwindow LoginHook $PWD/osx_startup_script.sh && sudo ./osx_startup_script.sh
-      description: setup login hook to remap keys
-      stderr: true
-      stout: true
-      stin: true
+      command: brew bundle
+      description: install all my loved homebrew packages
 
 - link:
     ~/.latexmkrc: latexmkrc

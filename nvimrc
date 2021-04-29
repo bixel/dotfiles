@@ -214,6 +214,9 @@ let g:vimtex_quickfix_ignore_filters = [
     \]
 let g:vimtex_quickfix_autoclose_after_keystrokes = 5
 
+let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
+
+
 "
 " coc.nvim
 "
@@ -376,9 +379,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "
 " End COC
 "
-
-" vimtex settings
-let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
 
 " Snakemake syntax
 au BufNewFile,BufRead Snakefile set syntax=snakemake
