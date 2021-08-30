@@ -16,8 +16,5 @@ export PYTHONPATH=/usr/local/lib/root
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-export P=$HOME/Nextcloud/Studium/2016.3\ Promotion
-export D=$HOME/mounts/ceph/b2oc/dsk-run2/
-
 # pyenv setup
 eval "$(pyenv init -)"

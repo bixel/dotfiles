@@ -109,6 +109,9 @@ set relativenumber  " aka :set rnu
 set ignorecase " ignore case while searching
 nnoremap <C-s> :set hlsearch!<CR>
 
+" python
+let g:python3_host_prog = '~/.pyenv/versions/3.9.5/bin/python'
+
 " autoformatting
 let g:formatter_python = ['yapf']
 let g:formatter_yapf_style = 'pep8'

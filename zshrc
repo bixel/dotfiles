@@ -13,6 +13,8 @@ zplug "junegunn/fzf", use:"shell/*.zsh"
 zplug "modules/git", from:prezto
 zplug "modules/completion", from:prezto
 zplug "esc/conda-zsh-completion"
+zplug "docker/compose", use:contrib/completion/zsh
+zplug "docker/cli", use:contrib/completion/zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -156,6 +158,9 @@ compdef _task t=task
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# load homebrew autocompletions
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 zplug load
 

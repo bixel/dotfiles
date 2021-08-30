@@ -6,4 +6,3 @@
 - link:
     ~/.latexmkrc: latexmkrc
     ~/Library/Application Support/iTerm2/DynamicProfiles/iterm-profiles.json: iterm-profiles.json
-    ~/.zsh_local: zsh_local_osx
