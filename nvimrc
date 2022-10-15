@@ -38,6 +38,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'ggandor/leap.nvim'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required
@@ -398,5 +399,9 @@ let g:go_version_warning = 0
 
 " easy align
 vmap <Enter> <Plug>(EasyAlign)
+
+" leap
+lua require('leap').add_default_mappings()
+lua require('leap').opts.highlight_unlabeled_phase_one_targets = true
 
 source $HOME/.config/nvim/local.vimrc
