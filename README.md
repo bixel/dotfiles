@@ -50,3 +50,9 @@ compinit
 Weirdly, this reported "compinit: insecure directories". After a few tries, it
 "just worked"...  If this is not the case, [this github issue might
 help](https://github.com/zsh-users/zsh-completions/issues/433).
+
+## Power settings on my old-ish MBP
+These should be fine, as per `man pmset`
+```
+sudo pmset -b hibernatemode 25 standbydelaylow 600 standbydelayhigh 1200
+```

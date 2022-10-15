@@ -36,6 +36,8 @@ Plug 'glench/vim-jinja2-syntax'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'KabbAmine/vCoolor.vim'
+Plug 'leafOfTree/vim-vue-plugin'
 
 " All of your Plugins must be added before the following line
 call plug#end()  " required

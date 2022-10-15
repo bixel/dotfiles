@@ -1,8 +1,13 @@
 {
   "dependencies": {
     "coc-json": ">=1.3.6",
-    "coc-metals": ">=1.0.7",
-    "coc-pyright": ">=1.1.164",
+    "coc-pyright": ">=1.1.194",
+    "coc-toml": ">=1.1.0",
+    "coc-vetur": ">=1.2.5",
+    "coc-vimtex": ">=1.0.4",
     "coc-yaml": ">=1.4.2"
-  }
+  },
+  "disabled": [],
+  "locked": [],
+  "lastUpdate": 1665865538302
 }
