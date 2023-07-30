@@ -113,7 +113,7 @@ set ignorecase " ignore case while searching
 nnoremap <C-s> :set hlsearch!<CR>
 
 " python
-" Thissholdotolocalnrvimrc
+" This should go to local nvimrc
 
 " autoformatting
 let g:formatter_python = ['yapf']
