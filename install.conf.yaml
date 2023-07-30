@@ -8,7 +8,7 @@
     - ["touch ~/.config/nvim/local.vimrc", Touching local vimrc]
     - ["git config --global core.excludesfile ~/.gitignore_global"]
 - link:
-    ~/.dotfiles: ''
+    ~/.dotfiles: '.'
     ~/.zlogin: zlogin
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
