@@ -12,9 +12,9 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "junegunn/fzf", use:"shell/*.zsh"
 zplug "modules/git", from:prezto
 zplug "modules/completion", from:prezto
-zplug "esc/conda-zsh-completion"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "docker/cli", use:contrib/completion/zsh
+zplug "Azure/azure-cli", use:az.completion, defer:3
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -58,55 +58,11 @@ printable-code()
   echo $doc | pandoc -o "$name.$oformat"
 }
 
-# mount a remote's ($1) host dir ($2) at $3/$2 or ~/mounts/$2 if $3 is not set
-mountremote () {
-  # set the root mount dir
-  mountroot="${REMOTE_MOUNT_ROOT:-$HOME/mounts}";
-  if [ -n "$3" ]; then
-      mountpoint=$3
-  elif [ -z "$2" ]; then
-      mountpoint=$1-home
-  else
-      mountpoint=$1-`echo $2 | sed -E "s/\///g"`
-  fi
-  mkdir -p $mountroot/$mountpoint
-  if [[ $(uname -a) == *"Darwin"* ]]; then
-      # following line is apple-specific
-      sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,volname=$mountpoint,no_readahead,noappledouble,nolocalcaches
-  else
-      sshfs $1:$2 "$mountroot/$mountpoint" -o auto_cache,reconnect,no_readahead
-  fi
-  unset mountroot
-  unset mountpoint
-}
-
-# check number of tmux sessions running on list of ssh hosts
-function tmux-num-sessions () {
-    if (( $# == 0 )) then;
-        echo usage: tmux-num-sessions ssh-host-1 ssh-host-2 ...
-    fi
-    hosts=$@
-    for i; do
-        sessions=$(ssh $i tmux ls 2>/dev/null)
-        if (( $? )) then;
-            echo $i: No sessions
-        else
-            echo $i: $(echo $sessions | wc -l) sessions
-        fi
-    done
-}
-
 # help creating links to emails
 # in apple mail, go to viewing → Show message headers → Custom... → Add "Message-ID"
 function murl () {
     echo message://"%3c"$@"%3e"
 }
-
-# make the clipboard working on remote
-if [[ -n "$SSH_CLIENT" ]]; then
-  SSH_IP=$(echo $SSH_CLIENT | awk '{print $1}')
-  alias pbcopy="ssh $SSH_IP pbcopy"
-fi
 
 #
 # Aliases
@@ -124,37 +80,7 @@ alias rm="nocorrect rm"
 # Python
 #
 
-# virtualenvwrapper
-if [ -f ~/virtualenvwrapper.sh ]; then
-  source ~/virtualenvwrapper.sh
-  export VIRTUAL_ENV_DISABLE_PROMT=yes
-fi
-
-if [[ -n "$ITERM_INTEGRATION" && -f ~/.iterm2_shell_integration.zsh ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
-# a new attempt to forward ssh sockets to tmux
-
-if [[ -n "$SSH_AUTH_SOCK" ]]; then
-    # based on/using http://stackoverflow.com/questions/21378569 and
-    # https://gist.github.com/martijnvermaat/8070533
-
-    # Fix SSH auth socket location so agent forwarding works with tmux
-    if [[ -z "$TMUX" ]] ; then
-        ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
-    else
-        export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-    fi
-fi
-
-# taskwarrior setup, stolen from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/taskwarrior/taskwarrior.plugin.zsh
-zstyle ':completion:*:*:task:*' verbose yes
-zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:*:task:*' group-name ''
-
-alias t=task
-compdef _task t=task
+alias pip_update_all="pip install -r <(pip freeze | sed 's|==.*||') -U"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -167,3 +93,5 @@ zplug load
 # use up and down keys for substring search (needs to be called after plugin loading)
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+[[ ! -f ~/.zsh_local_completions ]] || source ~/.zsh_local_completions

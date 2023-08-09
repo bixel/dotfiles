@@ -23,7 +23,7 @@
 # Logs and databases #
 ######################
 *.log
-*.sql
+#*.sql
 *.sqlite
 
 # OS generated files #
@@ -45,5 +45,7 @@ __pycache__/
 .clang
 toolchain.cmake
 livepreview/
-.env
+*.env
 .python-version
+.metals/
+.idea/
