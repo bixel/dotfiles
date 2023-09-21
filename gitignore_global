@@ -49,3 +49,4 @@ livepreview/
 .python-version
 .metals/
 .idea/
+.vscode

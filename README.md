@@ -56,3 +56,14 @@ These should be fine, as per `man pmset`
 ```
 sudo pmset -b hibernatemode 25 standbydelaylow 600 standbydelayhigh 1200
 ```
+
+## Storing secrets and stuff in keychain
+Thanks to [some medium article](https://medium.com/@johnjjung/how-to-store-sensitive-environment-variables-on-macos-76bd5ba464f6)
+```
+security add-generic-password -a "$USER" -s 'name_of_your_key' -w 'passphrase'
+```
+and
+```
+security find-generic-password -a "$USER" -s 'name_of_your_key' -w
+```
+
