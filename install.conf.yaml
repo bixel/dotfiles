@@ -29,6 +29,6 @@
     ~/.gitignore_global: gitignore_global
     ~/.taskrc: taskrc
     ~/.p10k.zsh: p10k.zsh
-    ~/.local/bin/setup_pyenv_brew_links:
+    ~/.local/bin/brew_pyenv_setup:
         create: true
-        path: scripts/setup_pyenv_brew_links.bash
+        path: scripts/brew_pyenv_setup.py
