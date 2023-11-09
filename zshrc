@@ -16,14 +16,6 @@ zplug "docker/compose", use:contrib/completion/zsh
 zplug "docker/cli", use:contrib/completion/zsh
 zplug "Azure/azure-cli", use:az.completion, defer:3
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
 ### U S E R  C O N F I G ###
 
 zmodload zsh/complist
@@ -64,6 +56,7 @@ function murl () {
     echo message://"%3c"$@"%3e"
 }
 
+
 #
 # Aliases
 #
@@ -76,11 +69,20 @@ alias imgcat="~/.dotfiles/imgcat"
 # Utility
 alias rm="nocorrect rm"
 
+
 #
 # Python
 #
 
 alias pip_update_all="pip install -r <(pip freeze | sed 's|==.*||') -U"
+
+
+#
+# direnv
+#
+
+eval "$(direnv hook zsh)"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
