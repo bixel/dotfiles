@@ -23,23 +23,6 @@ Remap ESC and CAPSLOCK keys
 sudo defaults read com.apple.loginwindow || sudo defaults write com.apple.loginwindow LoginHook $PWD/osx_startup_script.sh && sudo ./osx_startup_script.sh
 ```
 
-## Apple M1 and python quirks
-Currently, adding this to the `.zsh_local` for x86 vs arm64 workarounds
-```bash
-if [ "$(uname -m)" = "x86_64" ]; then
-    export X86_SLUG="86"
-fi
-
-export PATH="/opt/homebrew$X86_SLUG/bin:/opt/homebrew$X86_SLUG/sbin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv$X86_SLUG"
-export PATH="$PYENV_ROOT/bin:$HOME/.jenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(jenv init -)"
-```
-I've added a prompt segment to indicate if I'm currently in a rosetta shell.
-
 ## Oddities
 
 To properly activate autocompletion, I need to run
