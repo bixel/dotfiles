@@ -17,6 +17,12 @@ from dataclasses import dataclass
 import logging
 
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="{%(pathname)s:%(lineno)d} %(levelname)s - %(message)s",
+)
+
+
 @dataclass
 class Binary:
     executable: str
@@ -39,7 +45,9 @@ DIRS_TO_LINK = ["include", "lib", "share"]
 installed_brew_packages = subprocess.getoutput("brew list").split()
 brew_prefix = Path(subprocess.getoutput("brew --prefix")) / "opt"
 
-installed_versions = [p for p in installed_brew_packages if "python@" in p]
+installed_versions = [
+    p for p in installed_brew_packages if "python@" in p or "python-tk@" in p
+]
 
 logging.info(f"Will link following installed versions: {installed_versions}")
 
@@ -50,13 +58,17 @@ logging.info(f"Will add all necessary links to {pyenv_dir}")
 for pyversion in installed_versions:
     logging.info(f"Check dir for {pyversion}")
     _, version = pyversion.split("@")
-    (pyenv_dir / version).mkdir(exist_ok=True)
+    if "-tk" in pyversion:
+        link_dir = pyenv_dir / f"{version}-tk"
+    else:
+        link_dir = pyenv_dir / version
+    link_dir.mkdir(exist_ok=True)
     for binary in BINARIES_TO_LINK:
-        (pyenv_dir / version / "bin").mkdir(exist_ok=True)
+        (link_dir / "bin").mkdir(exist_ok=True)
         target = (
             brew_prefix / pyversion / "bin" / binary.executable.format(version=version)
         )
-        source = pyenv_dir / version / "bin" / binary.executable.format(version=version)
+        source = link_dir / "bin" / binary.executable.format(version=version)
         if source.is_file():
             if source.resolve() != target.resolve():
                 logging.warning(
@@ -66,7 +78,7 @@ for pyversion in installed_versions:
 
         source.symlink_to(target)
         for link in binary.links:
-            source = pyenv_dir / version / "bin" / link
+            source = link_dir / "bin" / link
             target = brew_prefix / pyversion / "libexec/bin" / link
             if source.is_symlink():
                 logging.warning(f"Link {target} -> {source} already exists. Skipping.")
@@ -75,7 +87,7 @@ for pyversion in installed_versions:
 
     for dir_ in DIRS_TO_LINK:
         target = brew_prefix / pyversion / dir_
-        source = pyenv_dir / version / dir_
+        source = link_dir / dir_
         if source.is_dir():
             if source.resolve() != target.resolve():
                 logging.warning(
