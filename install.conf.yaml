@@ -20,11 +20,9 @@
         create: true
         path: nvim/after/ftplugin/
     ~/.config/nvim/UltiSnips:
-        relink: true
         path: nvim/UltiSnips/
     ~/.config/nvim/autoload/plug.vim:
         create: true
-        relink: true
         path: external/vim-plug/plug.vim
     ~/.gitignore_global: gitignore_global
     ~/.taskrc: taskrc
@@ -32,3 +30,6 @@
     ~/.local/bin/brew_pyenv_setup:
         create: true
         path: scripts/brew_pyenv_setup.py
+    ~/.config/sheldon/plugins.toml:
+        create: true
+        path: sheldon-plugins.toml

@@ -10,6 +10,3 @@
 [submodule "external/tpm"]
 	path = external/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-[submodule "external/zplug"]
-	path = external/zplug
-	url = https://github.com/zplug/zplug

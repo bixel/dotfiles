@@ -3,34 +3,19 @@
 source ~/.zsh_local
 
 # activate plugin manager
-export ZPLUG_HOME=$HOME/.dotfiles/external/zplug
-source $ZPLUG_HOME/init.zsh
+# export ZPLUG_HOME=$HOME/.dotfiles/external/zplug
+# source $ZPLUG_HOME/init.zsh
 
-zplug "romkatv/powerlevel10k", as:theme, use:"*10k.zsh-theme", depth:1
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "junegunn/fzf", use:"shell/*.zsh"
-zplug "modules/git", from:prezto
-zplug "modules/completion", from:prezto
-zplug "docker/compose", use:contrib/completion/zsh
-zplug "docker/cli", use:contrib/completion/zsh
-zplug "Azure/azure-cli", use:az.completion, defer:3
-
+# zplug "romkatv/powerlevel10k", as:theme, use:"*10k.zsh-theme", depth:1
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug "zsh-users/zsh-history-substring-search", defer:3
+# zplug "junegunn/fzf", use:"shell/*.zsh"
+# zplug "modules/git", from:prezto
+# zplug "modules/completion", from:prezto
+# zplug "docker/compose", use:contrib/completion/zsh
+# zplug "docker/cli", use:contrib/completion/zsh
+# zplug "Azure/azure-cli", use:az.completion, defer:3
 ### U S E R  C O N F I G ###
-
-zmodload zsh/complist
-zstyle ':completion:*' menu select
-
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
 
 # random string function
 random-string()
@@ -90,7 +75,24 @@ eval "$(direnv hook zsh)"
 # load homebrew autocompletions
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
-zplug load
+# zplug load
+if which sheldon > /dev/null; then
+  eval "$(sheldon source)"
+fi
+
+zmodload zsh/complist
+zstyle ':completion:*' menu select
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
 # use up and down keys for substring search (needs to be called after plugin loading)
 bindkey '^[[A' history-substring-search-up
