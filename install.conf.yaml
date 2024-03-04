@@ -7,6 +7,7 @@
     - ["mkdir -p ~/.config/nvim/{backup,swap,undo}", Creating nvim backup dirs]
     - ["touch ~/.config/nvim/local.vimrc", Touching local vimrc]
     - ["git config --global core.excludesfile ~/.gitignore_global"]
+    - ["git config --global rerere.enabled true"]
 - link:
     ~/.dotfiles: '.'
     ~/.zlogin: zlogin
