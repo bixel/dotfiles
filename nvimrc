@@ -9,7 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'whiteinge/diffconflicts'
 Plug 'mhinz/vim-startify'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'suan/vim-instant-markdown'
@@ -91,7 +91,7 @@ command Qa qa
 command WQ wq
 
 " color scheme
-colo solarized
+colo solarized8
 
 set ai  " Set auto inline on
 set number  " Show line numbers

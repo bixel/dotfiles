@@ -11,8 +11,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "junegunn/fzf", use:"shell/*.zsh"
 zplug "modules/git", from:prezto
-# zplug "modules/completion", from:prezto
-zplug "marlonrichert/zsh-autocomplete", use:zsh-autocomplete.plugin.zsh, depth:1
+zplug "modules/completion", from:prezto
+# zplug "marlonrichert/zsh-autocomplete", use:zsh-autocomplete.plugin.zsh, depth:1
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "docker/cli", use:contrib/completion/zsh
 zplug "Azure/azure-cli", use:az.completion, defer:3
