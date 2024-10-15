@@ -34,3 +34,6 @@
     ~/.config/sheldon/plugins.toml:
         create: true
         path: sheldon-plugins.toml
+    ~/.local/bin/backup_server_to_disk:
+        create: true
+        path: scripts/backup_server_to_disk.sh
