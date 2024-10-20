@@ -44,7 +44,3 @@ use = ["modules/git/init.zsh", "init.zsh", "modules/completion/init.zsh"]
 [plugins.docker-cli]
 github = "docker/cli"
 use = ["contrib/completion/zsh/_docker"]
-
-[plugins.azure-cli]
-github = "azure/azure-cli"
-use = ["az.completion"]
