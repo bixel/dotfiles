@@ -19,7 +19,6 @@ Plug 'SirVer/ultisnips'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
@@ -192,33 +191,6 @@ set noequalalways
 " list whitespaces and some other characters
 set listchars=tab:>-,trail:~
 set list
-
-" use latex flavour for plaintex files
-let g:tex_flavor = "latex"
-
-" set some default options for my personal latexmk
-let g:vimtex_compiler_progname="nvr"
-let g:vimtex_view_method = 'skim'
-" let g:vimtex_view_general_viewer = 'open'
-" let g:vimtex_view_general_options = '-a Skim'
-
-let g:vimtex_compiler_latexmk={
-    \ 'options' : [
-    \   '-lualatex',
-    \   '-silent',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \   '-shell-escape',
-    \ ],
-    \ 'build_dir' : 'livepreview',
-    \}
-let g:vimtex_quickfix_ignore_filters = [
-    \ 'Marginpar on page',
-    \]
-let g:vimtex_quickfix_autoclose_after_keystrokes = 5
-
-let g:vimtex_matchparen_enabled=0  " turn off folding to speed up things
-
 
 "
 " coc.nvim
