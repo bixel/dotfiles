@@ -102,3 +102,12 @@ bindkey '^[[B' history-substring-search-down
 
 # Better cp -- must go after compinit and stuff
 eval "$(zoxide init zsh)"
+
+# Store if light or dark mode is active
+if [[ $(defaults read -g AppleInterfaceStyle 2&> /dev/null) == "Dark" ]]
+then
+    UIMODE="dark"
+else
+    UIMODE="light"
+fi
+export TASKRC=~/.taskrc-${UIMODE}

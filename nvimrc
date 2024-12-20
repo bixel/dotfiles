@@ -74,6 +74,9 @@ nnoremap <leader>o :!open build/*.pdf<CR>
 " open Nerdtree with CTRL+n
 map <C-n> :NERDTreeToggle<CR>
 
+" set default background according to system
+let background=$UIMODE
+
 " toggle background with ,i
 nnoremap <leader>i :let &background = (&background == "dark" ? "light" : "dark")<CR>
 

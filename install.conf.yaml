@@ -26,7 +26,8 @@
         create: true
         path: external/vim-plug/plug.vim
     ~/.gitignore_global: gitignore_global
-    ~/.taskrc: taskrc
+    ~/.taskrc-light: taskrc-light
+    ~/.taskrc-dark: taskrc-dark
     ~/.p10k.zsh: p10k.zsh
     ~/.local/bin/brew_pyenv_setup:
         create: true
