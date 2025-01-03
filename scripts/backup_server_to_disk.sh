@@ -4,8 +4,9 @@ SERVER=${1:-"cnew"}
 DISK=${2:-"/Volumes/Server"}
 BWLIMIT=${3:-"0"}
 ONLY_RASPI=${4:-"N"}
+DATE=${5:-`date "+%Y-%m-%d"`}
 
-echo "Backing up server $SERVER to disk $DISK."
+echo "Backing up server $SERVER to disk $DISK/$DATE."
 
 if [[ "$BWLIMIT" != "0" ]]; then
     echo "I/O bandwidth limit (rsync --bwlimit) is $BWLIMIT"
@@ -27,15 +28,18 @@ fi
 
 
 # Basic snapshot-style rsync backup script
-date=`date "+%Y-%m"`
 
 # Run rsync to create snapshot
 # exclude backups on the remote to prevent filling with hardlinks
 if [[ "$ONLY_RASPI" != "Y" ]]; then
     rsync -aPhRz \
         --bwlimit=$BWLIMIT \
-        --exclude "*-backup*/*" --exclude="*cache*" --rsync-path "sudo rsync" \
-        --link-dest=$DISK/last $SERVER:/etc :/home :/var :/root $DISK/$date
+        --exclude "*-backup*/*" \
+        --exclude="*cache*" \
+        --include="/var/lib/docker/volumes/*" \
+        --exclude="/var/lib/docker/*" \
+        --rsync-path "sudo rsync" \
+        --link-dest=$DISK/last $SERVER:/etc :/home :/var :/root $DISK/$DATE
 else
     echo "Skipped main backup"
 fi
@@ -45,14 +49,20 @@ fi
 # */last pattern
 rsync -aPhRzLK \
     --bwlimit=$BWLIMIT \
-    --include "var/" --include "*-backups/" \
-    --exclude ".npm/*" --exclude "*cache*/*" \
-    --include "home/" --include "home/raspi-backup/" \
-    --include "*-backup*/last" --include "*-backup*/last/**" --exclude="*" --rsync-path "sudo rsync" \
-    --link-dest=$DISK/last $SERVER:/home/raspi-backup :/var $DISK/$date
+    --include "var/" \
+    --include "*-backups/" \
+    --exclude ".npm/*" \
+    --exclude "*cache*/*" \
+    --include "home/" \
+    --include "home/raspi-backup/" \
+    --include "*-backup*/last" \
+    --include "*-backup*/last/**" \
+    --exclude="*" \
+    --rsync-path "sudo rsync" \
+    --link-dest=$DISK/last $SERVER:/home/raspi-backup :/var $DISK/$DATE
 
 # Remove symlink to previous snapshot
 rm -f $DISK/last
 
 # Create new symlink to latest snapshot for the next backup to hardlink
-ln -s $DISK/$date $DISK/last
+ln -s $DISK/$DATE $DISK/last
