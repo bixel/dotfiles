@@ -1,20 +1,7 @@
 # Device-specifig setup (ignored by git)
 # source local config first to overwrite default theme if wanted
-source ~/.zsh_local
+[[ ! -f ~/.zsh_local ]] || source ~/.zsh_local
 
-# activate plugin manager
-# export ZPLUG_HOME=$HOME/.dotfiles/external/zplug
-# source $ZPLUG_HOME/init.zsh
-
-# zplug "romkatv/powerlevel10k", as:theme, use:"*10k.zsh-theme", depth:1
-# zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# zplug "zsh-users/zsh-history-substring-search", defer:3
-# zplug "junegunn/fzf", use:"shell/*.zsh"
-# zplug "modules/git", from:prezto
-# zplug "modules/completion", from:prezto
-# zplug "docker/compose", use:contrib/completion/zsh
-# zplug "docker/cli", use:contrib/completion/zsh
-# zplug "Azure/azure-cli", use:az.completion, defer:3
 ### U S E R  C O N F I G ###
 
 # random string function

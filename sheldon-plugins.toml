@@ -33,13 +33,16 @@ github = "zsh-users/zsh-syntax-highlighting"
 [plugins.history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
 
-[plugins.fzf]
-github = "junegunn/fzf"
-use = ["shell/*.zsh"]
-
 [plugins.git]
 github = "sorin-ionescu/prezto"
-use = ["modules/git/init.zsh", "init.zsh", "modules/completion/init.zsh"]
+use = ["/init.zsh", "/modules/git/init.zsh", "/modules/osx/init.zsh", "/modules/archive/init.zsh"]
+
+[plugins.fzf]
+github = "junegunn/fzf"
+use = ["shell/completion.zsh"]
+
+[plugins.fzf.hooks]
+post = "source <(fzf --zsh | sed -e '/zmodload/s/perl/perl_off/' -e '/selected/s/fc -rl/fc -irl/')"
 
 [plugins.docker-cli]
 github = "docker/cli"
