@@ -81,10 +81,6 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# use up and down keys for substring search (needs to be called after plugin loading)
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 [[ ! -f ~/.zsh_local_completions ]] || source ~/.zsh_local_completions
 
 # Better cp -- must go after compinit and stuff

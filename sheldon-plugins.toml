@@ -30,9 +30,6 @@ use = ["*10k.zsh-theme"]
 [plugins.syntax-highlight]
 github = "zsh-users/zsh-syntax-highlighting"
 
-[plugins.history-substring-search]
-github = "zsh-users/zsh-history-substring-search"
-
 [plugins.git]
 github = "sorin-ionescu/prezto"
 use = ["/init.zsh", "/modules/git/init.zsh", "/modules/osx/init.zsh", "/modules/archive/init.zsh"]

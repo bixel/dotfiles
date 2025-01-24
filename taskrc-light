@@ -9,4 +9,4 @@ search.case.sensitive=no
 # Color theme (uncomment one to use)
 include /opt/homebrew/opt/task/share/doc/task/rc/solarized-light-256.theme
 
-news.version=3.1.0
+news.version=3.3.0
