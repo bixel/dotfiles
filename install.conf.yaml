@@ -7,7 +7,7 @@
     - ["mkdir -p ~/.config/nvim/{backup,swap,undo}", Creating nvim backup dirs]
     - ["touch ~/.config/nvim/local.vimrc", Touching local vimrc]
     - ["git config --global core.excludesfile ~/.gitignore_global"]
-    - ["git config --global rerere.enabled true"]
+    - ["git config --global include.path ~/.gitconfig_common"]
 - link:
     ~/.dotfiles: '.'
     ~/.zlogin: zlogin
@@ -26,6 +26,7 @@
         create: true
         path: external/vim-plug/plug.vim
     ~/.gitignore_global: gitignore_global
+    ~/.gitconfig_common: gitconfig
     ~/.taskrc-light: taskrc-light
     ~/.taskrc-dark: taskrc-dark
     ~/.p10k.zsh: p10k.zsh
