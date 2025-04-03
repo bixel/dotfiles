@@ -44,7 +44,3 @@ post = "source <(fzf --zsh | sed -e '/zmodload/s/perl/perl_off/' -e '/selected/s
 [plugins.docker-cli]
 github = "docker/cli"
 use = ["contrib/completion/zsh/_docker"]
-
-[plugins.azure-cli]
-github = "azure/azure-cli"
-use = ["az.completion"]
