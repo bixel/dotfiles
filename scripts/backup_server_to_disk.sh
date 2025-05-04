@@ -40,10 +40,18 @@ if [[ "$ONLY_RASPI" != "Y" ]]; then
         --bwlimit=$BWLIMIT \
         --exclude "*-backup*/*" \
         --exclude="*cache*" \
-        --include="/var/lib/docker/volumes/*" \
+        --include="/var/lib/docker/" \
+        --include="/var/lib/docker/volumes" \
+        --include="/var/lib/docker/volumes/**" \
         --exclude="/var/lib/docker/*" \
         --rsync-path "sudo rsync" \
         --link-dest=$DISK/last $SERVER:/etc :/home :/var :/root :/opt :/sbin :/shared :/srv :/usr $DISK/$DATE
+
+    # Remove symlink to previous snapshot
+    rm -f $DISK/last
+
+    # Create new symlink to latest snapshot for the next backup to hardlink
+    ln -s $DISK/$DATE $DISK/last
 else
     echo "Skipped main backup"
 fi
@@ -67,10 +75,10 @@ rsync -aPhRzLK \
     --include "*-backup*/last/**" \
     --exclude="*" \
     --rsync-path "sudo rsync" \
-    --link-dest=$DISK/last $SERVER:/home/raspi-backup :/var $DISK/$DATE
+    --link-dest=$DISK/raspi-backup/last $SERVER:/home/raspi-backup $DISK/raspi-backup/$DATE
 
 # Remove symlink to previous snapshot
-rm -f $DISK/last
+rm -f $DISK/raspi-backup/last
 
 # Create new symlink to latest snapshot for the next backup to hardlink
-ln -s $DISK/$DATE $DISK/last
+ln -s $DISK/raspi-backup/$DATE $DISK/raspi-backup/last
