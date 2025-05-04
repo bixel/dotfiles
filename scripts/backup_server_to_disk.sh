@@ -33,13 +33,17 @@ fi
 # exclude backups on the remote to prevent filling with hardlinks
 if [[ "$ONLY_RASPI" != "Y" ]]; then
     rsync -aPhRz \
+        --numeric-ids \
+        --rsh="ssh -F $HOME/.ssh/config_root" \
+        --delete \
+        --delete-excluded \
         --bwlimit=$BWLIMIT \
         --exclude "*-backup*/*" \
         --exclude="*cache*" \
         --include="/var/lib/docker/volumes/*" \
         --exclude="/var/lib/docker/*" \
         --rsync-path "sudo rsync" \
-        --link-dest=$DISK/last $SERVER:/etc :/home :/var :/root $DISK/$DATE
+        --link-dest=$DISK/last $SERVER:/etc :/home :/var :/root :/opt :/sbin :/shared :/srv :/usr $DISK/$DATE
 else
     echo "Skipped main backup"
 fi
@@ -48,6 +52,10 @@ fi
 # need to explicitly include each level of directories before adding a global
 # */last pattern
 rsync -aPhRzLK \
+    --numeric-ids \
+    --rsh="ssh -F $HOME/.ssh/config_root" \
+    --delete \
+    --delete-excluded \
     --bwlimit=$BWLIMIT \
     --include "var/" \
     --include "*-backups/" \
