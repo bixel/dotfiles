@@ -41,6 +41,9 @@ alias imgcat="~/.dotfiles/imgcat"
 # Utility
 alias rm="nocorrect rm"
 
+# bitwarden: read session from keychain if it does not exist yet before running bitwarden
+alias bwl="export BW_SESSION=$(security find-generic-password -a $USER -s BW_SESSION -w) && echo \"bw session set\""
+
 
 #
 # Python
