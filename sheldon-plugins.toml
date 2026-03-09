@@ -21,7 +21,7 @@ apply = ["source"]
 # defer = { value = 'zsh-defer source "{{ file }}"', each = true }
 
 [plugins.compinit]
-inline = 'autoload -Uz compinit && zsh-defer compinit && compinit'
+inline = 'autoload -Uz compinit && compinit'
 
 [plugins.p10k]
 github = "romkatv/powerlevel10k"

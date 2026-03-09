@@ -67,13 +67,19 @@ if which brew > /dev/null; then
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 fi
 
+zmodload zsh/complist
+
 # zplug load
 if which sheldon > /dev/null; then
   eval "$(sheldon source)"
 fi
 
-zmodload zsh/complist
 zstyle ':completion:*' menu select
+
+[[ ! -f ~/.zsh_local_completions ]] || source ~/.zsh_local_completions
+
+# Better cp -- must go after compinit and stuff
+eval "$(zoxide init zsh)"
 
 # vi mode
 bindkey -v
@@ -85,11 +91,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-
-[[ ! -f ~/.zsh_local_completions ]] || source ~/.zsh_local_completions
-
-# Better cp -- must go after compinit and stuff
-eval "$(zoxide init zsh)"
 
 # Store if light or dark mode is active
 if [[ $(defaults read -g AppleInterfaceStyle 2&> /dev/null) == "Dark" ]]
