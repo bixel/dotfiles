@@ -63,8 +63,8 @@ eval "$(direnv hook zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # load homebrew autocompletions
-if which brew > /dev/null; then
-  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+if [[ -d /opt/homebrew/share/zsh/site-functions ]]; then
+  fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 fi
 
 zmodload zsh/complist

@@ -21,7 +21,7 @@ apply = ["source"]
 # defer = { value = 'zsh-defer source "{{ file }}"', each = true }
 
 [plugins.compinit]
-inline = 'autoload -Uz compinit && compinit'
+inline = 'autoload -Uz compinit; if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi'
 
 [plugins.p10k]
 github = "romkatv/powerlevel10k"
