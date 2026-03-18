@@ -67,6 +67,9 @@ if [[ -d /opt/homebrew/share/zsh/site-functions ]]; then
   fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 fi
 
+# load custom completions
+fpath=(~/.zfunc $fpath)
+
 zmodload zsh/complist
 
 # zplug load
