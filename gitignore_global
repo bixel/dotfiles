@@ -51,3 +51,5 @@ livepreview/
 .metals/
 .idea/
 .vscode
+
+**/.claude/settings.local.json

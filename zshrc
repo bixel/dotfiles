@@ -41,8 +41,30 @@ alias imgcat="~/.dotfiles/imgcat"
 # Utility
 alias rm="nocorrect rm"
 
-# bitwarden: read session from keychain if it does not exist yet before running bitwarden
-alias bwl="export BW_SESSION=$(security find-generic-password -a $USER -s BW_SESSION -w) && echo \"bw session set\""
+# bitwarden: ensure a valid BW_SESSION, caching it in the macOS keychain.
+# reads cached session, validates, and unlocks/logs in only if needed.
+bwl() {
+  local svc="BW_SESSION"
+  export BW_SESSION="$(security find-generic-password -a "$USER" -s "$svc" -w 2>/dev/null)"
+
+  local bw_status
+  bw_status="$(bw status --session "$BW_SESSION" 2>/dev/null | jq -r '.status')"
+
+  case "$bw_status" in
+    unlocked)
+      echo "bw session valid" ;;
+    locked|"")
+      BW_SESSION="$(bw unlock --raw)" || return 1
+      security add-generic-password -U -a "$USER" -s "$svc" -w "$BW_SESSION"
+      export BW_SESSION
+      echo "bw session unlocked + cached" ;;
+    unauthenticated)
+      BW_SESSION="$(bw login --raw)" || return 1
+      security add-generic-password -U -a "$USER" -s "$svc" -w "$BW_SESSION"
+      export BW_SESSION
+      echo "bw session logged in + cached" ;;
+  esac
+}
 
 
 #

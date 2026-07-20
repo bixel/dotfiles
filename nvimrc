@@ -35,7 +35,7 @@ Plug 'glench/vim-jinja2-syntax'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ggandor/leap.nvim'
+Plug 'https://codeberg.org/andyg/leap.nvim.git'
 Plug 'towolf/vim-helm'
 Plug 'hashivim/vim-terraform'
 
